@@ -55,6 +55,7 @@ find_package(GitRevision REQUIRED)
 find_package(OS REQUIRED)
 find_package(OpenSSL)
 find_package(MySQL)
+find_package(Ssh2 REQUIRED)
 
 if (ENV_UNIX)
    find_package(ExecInfo REQUIRED)
