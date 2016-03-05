@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------------------------------------
-# \file  FindLibSsh2.cmake
+# \file  FindSsh2.cmake
 # \brief Find the native SSH2 includes and library
 #
 # SSH2_FOUND     - true if system has the libssh2 library
@@ -10,13 +10,15 @@
 
 find_path(SSH2_INCLUDES
     NAMES "libssh2.h"
-    PATH_SUFFIXES "mysql"
+    PATH_SUFFIXES ""
 )
 
 find_library(SSH2_LIBRARIES
     NAMES ssh2
-    PATHS "/usr/lib" "/usr/local/lib"
-    PATH_SUFFIXES mysql
+    PATHS
+        "/lib"   "/usr/lib"   "/usr/local/lib"
+        "/lib64" "/usr/lib64" "/usr/local/lib64"
+    PATH_SUFFIXES ""
 )
 
 if (NOT (SSH2_INCLUDES AND SSH2_LIBRARIES))
