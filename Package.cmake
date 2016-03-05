@@ -133,12 +133,11 @@ set(CPACK_OUTPUT_FILE_PREFIX ${CMAKE_SOURCE_DIR}/Distr/${CMAKE_BUILD_TYPE})
     # to specify a filename-only prefix part.
     # Example: /tmp/my_cpack_generated_packages
 #--------------------------------------------------------------------------------------------------
-
 include(CPack)
-
 
 # sudo apt-get install libegl1-mesa-dev libgles2-mesa-dev libgl1-mesa-dev
 # cd ..
 # mkdir ../XXXDb_build
 # cmake ../XXXDb
 # cpack ../XXXDb (or make package)
+#--------------------------------------------------------------------------------------------------

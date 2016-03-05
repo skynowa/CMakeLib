@@ -8,17 +8,19 @@
 #--------------------------------------------------------------------------------------------------
 
 
+#--------------------------------------------------------------------------------------------------
 find_path(MYSQL_INCLUDES
     NAMES "mysql.h"
-    PATH_SUFFIXES "mysql"
-)
+    PATH_SUFFIXES "mysql")
 
-set(MYSQL_NAMES mysqlclient mysqlclient_r)
 find_library(MYSQL_LIBRARIES
-    NAMES ${MYSQL_NAMES}
-    PATHS "/usr/lib" "/usr/local/lib"
-    PATH_SUFFIXES mysql
-)
+    NAMES
+        mysqlclient mysqlclient_r
+    PATHS
+        "/lib"   "/usr/lib"   "/usr/local/lib"
+        "/lib64" "/usr/lib64" "/usr/local/lib64"
+    PATH_SUFFIXES
+        "mysql")
 
 if (NOT (MYSQL_INCLUDES AND MYSQL_LIBRARIES))
     set(MYSQL_FOUND 0)
@@ -27,13 +29,13 @@ if (NOT (MYSQL_INCLUDES AND MYSQL_LIBRARIES))
 else()
     set(MYSQL_FOUND 1)
 endif()
-
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT MYSQL_FOUND AND MYSQL_FIND_REQUIRED)
     message(FATAL_ERROR "MYSQL_FOUND: ${MYSQL_FOUND}")
 else()
-    message(STATUS "MYSQL_FOUND: ${MYSQL_FOUND}")
+    # message(STATUS "MYSQL_FOUND: ${MYSQL_FOUND}")
     # message("     MYSQL_INCLUDES: ${MYSQL_INCLUDES}")
     # message("     MYSQL_LIBRARIES: ${MYSQL_LIBRARIES}")
 endif()
+#--------------------------------------------------------------------------------------------------

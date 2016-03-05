@@ -1,5 +1,6 @@
 ### DELETE begin ###
 [LIB_NAME]          - lib name
+[lib_names]         - lib name
 [LIB_H]             - lib header file
 [LIB_PATH_SUFFIXES] - lib path suffix
 ### DELETE end ###
@@ -15,18 +16,19 @@
 #--------------------------------------------------------------------------------------------------
 
 
+#--------------------------------------------------------------------------------------------------
 find_path([LIB_NAME]_INCLUDES
     NAMES "[LIB_H]"
-    PATH_SUFFIXES "[LIB_PATH_SUFFIXES]"
-)
+    PATH_SUFFIXES "[LIB_PATH_SUFFIXES]")
 
 find_library([LIB_NAME]_LIBRARIES
-    NAMES ssh2
+    NAMES
+        [lib_names]
     PATHS
         "/lib"   "/usr/lib"   "/usr/local/lib"
         "/lib64" "/usr/lib64" "/usr/local/lib64"
-    PATH_SUFFIXES [LIB_PATH_SUFFIXES]
-)
+    PATH_SUFFIXES
+        "[LIB_PATH_SUFFIXES]")
 
 if (NOT ([LIB_NAME]_INCLUDES AND [LIB_NAME]_LIBRARIES))
     set([LIB_NAME]_FOUND 0)
@@ -35,13 +37,13 @@ if (NOT ([LIB_NAME]_INCLUDES AND [LIB_NAME]_LIBRARIES))
 else()
     set([LIB_NAME]_FOUND 1)
 endif()
-
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT [LIB_NAME]_FOUND AND [LIB_NAME]_FIND_REQUIRED)
     message(FATAL_ERROR "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
 else()
-    message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
+    # message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
     # message("     [LIB_NAME]_INCLUDES: ${[LIB_NAME]_INCLUDES}")
     # message("     [LIB_NAME]_LIBRARIES: ${[LIB_NAME]_LIBRARIES}")
 endif()
+#--------------------------------------------------------------------------------------------------

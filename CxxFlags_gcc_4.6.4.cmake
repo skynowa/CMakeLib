@@ -1060,4 +1060,3 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverlength-strings")
 #
 # 3.18 Options for Code Generation Conventions
 #--------------------------------------------------------------------------------------------------
-

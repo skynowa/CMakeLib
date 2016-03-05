@@ -48,7 +48,6 @@ include(CheckSymbolExists)
 include(CheckTypeSize)
 include(CheckCSourceCompiles)
 include(CheckCXXSourceCompiles)
-
 #--------------------------------------------------------------------------------------------------
 # find packages
 find_package(GitRevision REQUIRED)
