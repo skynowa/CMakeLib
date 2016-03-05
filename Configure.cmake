@@ -50,16 +50,16 @@ include(CheckCSourceCompiles)
 include(CheckCXXSourceCompiles)
 #--------------------------------------------------------------------------------------------------
 # find packages
-find_package(GitRevision REQUIRED)
-find_package(OS REQUIRED)
-find_package(OpenSSL)
-find_package(MySQL)
-find_package(Ssh2 REQUIRED)
+find_package(GitRevision QUIET REQUIRED)
+find_package(OS QUIET REQUIRED)
+find_package(OpenSSL QUIET)
+find_package(MySQL QUIET)
+find_package(Ssh2 QUIET REQUIRED)
 
 if (ENV_UNIX)
-   find_package(ExecInfo REQUIRED)
-   find_package(XCB)
-   find_package(Addr2Line)
+   find_package(ExecInfo QUIET REQUIRED)
+   find_package(XCB QUIET)
+   find_package(Addr2Line QUIET)
 endif()
 #--------------------------------------------------------------------------------------------------
 # configure
