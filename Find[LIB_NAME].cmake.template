@@ -1,118 +1,47 @@
+### DELETE begin ###
+[LIB_NAME]          - lib name
+[LIB_H]             - lib header file
+[LIB_PATH_SUFFIXES] - lib path suffix
+### DELETE end ###
+
+
 #--------------------------------------------------------------------------------------------------
-# \file  FindOS.cmake
-# \brief find OS
+# \file  Find[LIB_NAME].cmake
+# \brief Find [LIB_NAME] includes and library
 #
-# OS environment:
-#   ENV_WIN
-#   ENV_UNIX
-#   ENV_LINUX
-#   ENV_BSD
-#   ENV_APPLE
-#
-# OS:
-#   OS_WIN
-#   OS_LINUX
-#   OS_ANDROID
-#   OS_FREEBSD
-#   OS_MACOSX
+# [LIB_NAME]_FOUND     - true if system has the libssh2 library
+# [LIB_NAME]_INCLUDES  - the libssh2 include directory
+# [LIB_NAME]_LIBRARIES - the libssh2 library name
 #--------------------------------------------------------------------------------------------------
 
 
-#--------------------------------------------------------------------------------------------------
-# unset cache
-unset(ENV_WIN    CACHE)
-unset(ENV_UNIX   CACHE)
-unset(ENV_LINUX  CACHE)
-unset(ENV_BSD    CACHE)
-unset(ENV_APPLE  CACHE)
-unset(OS_WIN     CACHE)
-unset(OS_LINUX   CACHE)
-unset(OS_ANDROID CACHE)
-unset(OS_FREEBSD CACHE)
-unset(OS_MACOSX  CACHE)
-#--------------------------------------------------------------------------------------------------
-# OS environment
-if     (WIN32)
-    set(ENV_WIN TRUE)
-elseif (UNIX)
-    set(ENV_UNIX TRUE)
+find_path([LIB_NAME]_INCLUDES
+    NAMES "[LIB_H]"
+    PATH_SUFFIXES "[LIB_PATH_SUFFIXES]"
+)
 
-    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        set(ENV_LINUX TRUE)
-    endif()
+find_library([LIB_NAME]_LIBRARIES
+    NAMES ssh2
+    PATHS
+        "/lib"   "/usr/lib"   "/usr/local/lib"
+        "/lib64" "/usr/lib64" "/usr/local/lib64"
+    PATH_SUFFIXES [LIB_PATH_SUFFIXES]
+)
 
-    if (${CMAKE_SYSTEM_NAME} MATCHES "BSD")
-        set(ENV_BSD TRUE)
-    endif()
-
-    if (APPLE)
-        set(ENV_APPLE TRUE)
-    endif()
+if (NOT ([LIB_NAME]_INCLUDES AND [LIB_NAME]_LIBRARIES))
+    set([LIB_NAME]_FOUND 0)
+    set([LIB_NAME]_INCLUDES "")
+    set([LIB_NAME]_LIBRARIES "")
 else()
-
+    set([LIB_NAME]_FOUND 1)
 endif()
-#--------------------------------------------------------------------------------------------------
-# OS
-if     (ENV_WIN)
-    set(OS_WIN TRUE)
-elseif (ENV_UNIX)
-    if (ENV_LINUX)
-        # Linux
-        set(OS_LINUX TRUE)
 
-        # Android
-        if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "armv7-a")
-            set(OS_ANDROID TRUE)
-        endif()
-    endif()
-
-    if (ENV_BSD)
-        if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-            set(OS_FREEBSD TRUE)
-        else()
-            message(ERROR "ENV_BSD - failed")
-        endif()
-    endif()
-
-    if (ENV_APPLE)
-        if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-            set(OS_MACOSX TRUE)
-        else()
-            message(ERROR "ENV_APPLE - failed")
-        endif()
-    endif()
-endif()
-#--------------------------------------------------------------------------------------------------
-# Add parent scope
-# set(ENV_WIN    ${ENV_WIN}    PARENT_SCOPE)
-# set(ENV_UNIX   ${ENV_UNIX}   PARENT_SCOPE)
-# set(ENV_LINUX  ${ENV_LINUX}  PARENT_SCOPE)
-# set(ENV_BSD    ${ENV_BSD}    PARENT_SCOPE)
-# set(ENV_APPLE  ${ENV_APPLE}  PARENT_SCOPE)
-# set(OS_WIN     ${OS_WIN}     PARENT_SCOPE)
-# set(OS_LINUX   ${OS_LINUX}   PARENT_SCOPE)
-# set(OS_ANDROID ${OS_ANDROID} PARENT_SCOPE)
-# set(OS_FREEBSD ${OS_FREEBSD} PARENT_SCOPE)
-# set(OS_MACOSX  ${OS_MACOSX}  PARENT_SCOPE)
 #--------------------------------------------------------------------------------------------------
 # trace
-# message("")
-# message("************ FindOS.cmake Variables **************")
-
-# message("* OS environment:")
-# message("*   ENV_WIN:    " ${ENV_WIN})
-# message("*   ENV_UNIX:   " ${ENV_UNIX})
-# message("*   ENV_LINUX:  " ${ENV_LINUX})
-# message("*   ENV_BSD:    " ${ENV_BSD})
-# message("*   ENV_APPLE:  " ${ENV_APPLE})
-
-# message("* OS:")
-# message("*   OS_WIN:     " ${OS_WIN})
-# message("*   OS_LINUX:   " ${OS_LINUX})
-# message("*   OS_ANDROID: " ${OS_ANDROID})
-# message("*   OS_FREEBSD: " ${OS_FREEBSD})
-# message("*   OS_MACOSX:  " ${OS_MACOSX})
-
-# message("**************************************************")
-# message("")
-#--------------------------------------------------------------------------------------------------
+if (NOT [LIB_NAME]_FOUND AND [LIB_NAME]_FIND_REQUIRED)
+    message(FATAL_ERROR "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
+else()
+    message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
+    # message("     [LIB_NAME]_INCLUDES: ${[LIB_NAME]_INCLUDES}")
+    # message("     [LIB_NAME]_LIBRARIES: ${[LIB_NAME]_LIBRARIES}")
+endif()
