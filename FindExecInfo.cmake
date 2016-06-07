@@ -10,15 +10,24 @@
 
 #--------------------------------------------------------------------------------------------------
 find_path(EXECINFO_INCLUDES
-    NAMES "execinfo.h"
-    PATH_SUFFIXES "")
-
-find_library(EXECINFO_LIBRARIES NAMES
     NAMES
-        execinfo
+        "execinfo.h"
     PATHS
-        "/lib"   "/usr/lib"   "/usr/local/lib"
-        "/lib64" "/usr/lib64" "/usr/local/lib64"
+        "/usr/include"
+        "/usr/local/include"
+    PATH_SUFFIXES
+        "")
+
+find_library(EXECINFO_LIBRARIES
+    NAMES
+        "execinfo"
+    PATHS
+        "/lib"
+        "/lib64"
+        "/usr/lib"
+        "/usr/lib64"
+        "/usr/local/lib"
+        "/usr/local/lib64"
     PATH_SUFFIXES
         "")
 

@@ -10,15 +10,24 @@
 
 #--------------------------------------------------------------------------------------------------
 find_path(SSH2_INCLUDES
-    NAMES "libssh2.h"
-    PATH_SUFFIXES "")
+    NAMES
+        "libssh2.h"
+    PATHS
+        "/usr/include"
+        "/usr/local/include"
+    PATH_SUFFIXES
+        "")
 
 find_library(SSH2_LIBRARIES
     NAMES
-        ssh2
+        "ssh2"
     PATHS
-        "/lib"   "/usr/lib"   "/usr/local/lib"
-        "/lib64" "/usr/lib64" "/usr/local/lib64"
+        "/lib"
+        "/lib64"
+        "/usr/lib"
+        "/usr/lib64"
+        "/usr/local/lib"
+        "/usr/local/lib64"
     PATH_SUFFIXES
         "")
 

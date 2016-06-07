@@ -12,27 +12,45 @@
 #--------------------------------------------------------------------------------------------------
 if (UNIX)
     find_path(XCB_INCLUDE_DIR
-        NAMES "xcb/xcb.h"
-        PATH_SUFFIXES "/usr/include"
-        DOC "The directory where xcb/xcb.h resides")
+        NAMES
+            "xcb/xcb.h"
+        PATHS
+            "/usr/include"
+            "/usr/local/include"
+        PATH_SUFFIXES
+            ""
+        DOC
+            "The directory where xcb/xcb.h resides")
 
     find_path(XLIB_XCB_INCLUDE_PATH
-        NAMES "X11/Xlib-xcb.h"
-        PATH_SUFFIXES "/usr/include"
-        DOC "The directory where X11/Xlib-xcb.h resides")
+        NAMES
+            "X11/Xlib-xcb.h"
+        PATHS
+            "/usr/include"
+            "/usr/local/include"
+        PATH_SUFFIXES
+            ""
+        DOC
+            "The directory where X11/Xlib-xcb.h resides")
 
     find_library(XCB_LIBRARY
         NAMES
-            xcb
+            "xcb"
         PATHS
-            "/lib"   "/usr/lib"   "/usr/local/lib"
-            "/lib64" "/usr/lib64" "/usr/local/lib64"
+            "/lib"
+            "/lib64"
+            "/usr/lib"
+            "/usr/lib64"
+            "/usr/local/lib"
+            "/usr/local/lib64"
+        PATH_SUFFIXES
+            ""
         DOC
             "The xcb library")
 
     # find_library(XCB_XLIB_LIBRARY
     #     NAMES
-    #         xcb-xlib
+    #         "xcb-xlib"
     #     PATHS
     #         "/usr/lib"
     #     DOC
@@ -40,10 +58,16 @@ if (UNIX)
 
     find_library(XLIB_XCB_LIBRARY
         NAMES
-            X11-xcb
+            "X11-xcb"
         PATHS
-            "/lib"   "/usr/lib"   "/usr/local/lib"
-            "/lib64" "/usr/lib64" "/usr/local/lib64"
+            "/lib"
+            "/lib64"
+            "/usr/lib"
+            "/usr/lib64"
+            "/usr/local/lib"
+            "/usr/local/lib64"
+        PATH_SUFFIXES
+            ""
         DOC
             "The X11-xcb library")
 
