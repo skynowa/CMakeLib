@@ -19,15 +19,23 @@
 
 #--------------------------------------------------------------------------------------------------
 find_path([LIB_NAME]_INCLUDES
-    NAMES "[LIB_H]"
-    PATH_SUFFIXES "[LIB_PATH_SUFFIXES]")
+    NAMES
+        "[LIB_H]"
+    PATHS
+        ""
+    PATH_SUFFIXES
+        "[LIB_PATH_SUFFIXES]")
 
 find_library([LIB_NAME]_LIBRARIES
     NAMES
         [lib_names]
     PATHS
-        "/lib"   "/usr/lib"   "/usr/local/lib"
-        "/lib64" "/usr/lib64" "/usr/local/lib64"
+        "/lib"
+        "/lib64"
+        "/usr/lib"
+        "/usr/lib64"
+        "/usr/local/lib"
+        "/usr/local/lib64"
     PATH_SUFFIXES
         "[LIB_PATH_SUFFIXES]")
 

@@ -1,13 +1,13 @@
 # This is basically supposed to be the CMake equivalent of
 # https://git.gnome.org/browse/gnome-common/tree/macros2/gnome-compiler-flags.m4
 
-include (AddCompilerFlags)
+include(AddCompilerFlags)
 
 if (MSVC)
   set (EXTRA_WARNING_FLAGS
     /W3)
-else ()
-  set (EXTRA_WARNING_FLAGS
+else()
+  set(EXTRA_WARNING_FLAGS
     -Wall
     -Waggregate-return
     -Wcast-align
@@ -55,14 +55,14 @@ else ()
     -WUnsafe-loop-optimizations
     -Wwrite-strings
     -Wsuggest-attribute=format)
-endif ()
+endif()
 
-mark_as_advanced (EXTRA_WARNING_FLAGS)
+mark_as_advanced(EXTRA_WARNING_FLAGS)
 
-function (target_add_extra_warning_flags target)
-  target_add_compiler_flags (${target} ${EXTRA_WARNING_FLAGS})
-endfunction (target_add_extra_warning_flags)
+function(target_add_extra_warning_flags target)
+    target_add_compiler_flags (${target} ${EXTRA_WARNING_FLAGS})
+endfunction()
 
 function (source_file_add_extra_warning_flags file)
-  source_file_add_compiler_flags (${file} ${EXTRA_WARNING_FLAGS})
-endfunction (source_file_add_extra_warning_flags)
+    source_file_add_compiler_flags (${file} ${EXTRA_WARNING_FLAGS})
+endfunction()
