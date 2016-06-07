@@ -11,6 +11,7 @@
 # \brief Find [LIB_NAME] includes and library
 #
 # [LIB_NAME]_FOUND     - true if system has the libssh2 library
+# xHAVE_[LIB_NAME]     - true if MySQL found (source used)
 # [LIB_NAME]_INCLUDES  - the libssh2 include directory
 # [LIB_NAME]_LIBRARIES - the libssh2 library name
 #--------------------------------------------------------------------------------------------------
