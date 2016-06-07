@@ -10,8 +10,14 @@
 
 #--------------------------------------------------------------------------------------------------
 find_path(MYSQL_INCLUDES
-    NAMES "mysql.h"
-    PATH_SUFFIXES "mysql")
+    NAMES
+        "mysql.h"
+    PATHS
+        "/usr/include"
+        "/usr/local/include"
+        "/usr/mysql/include"
+    PATH_SUFFIXES
+        "mysql")
 
 find_library(MYSQL_LIBRARIES
     NAMES
@@ -28,6 +34,7 @@ if (NOT (MYSQL_INCLUDES AND MYSQL_LIBRARIES))
     set(MYSQL_LIBRARIES "")
 else()
     set(MYSQL_FOUND 1)
+    set(xHAVE_MYSQL 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace

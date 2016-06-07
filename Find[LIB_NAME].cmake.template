@@ -36,6 +36,7 @@ if (NOT ([LIB_NAME]_INCLUDES AND [LIB_NAME]_LIBRARIES))
     set([LIB_NAME]_LIBRARIES "")
 else()
     set([LIB_NAME]_FOUND 1)
+    set(xHAVE_[LIB_NAME] 1) # config.h.in add: #cmakedefine xHAVE_[LIB_NAME] 1
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
