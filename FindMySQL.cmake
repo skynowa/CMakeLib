@@ -24,8 +24,12 @@ find_library(MYSQL_LIBRARIES
     NAMES
         mysqlclient mysqlclient_r
     PATHS
-        "/lib"   "/usr/lib"   "/usr/local/lib"
-        "/lib64" "/usr/lib64" "/usr/local/lib64"
+        "/lib"
+        "/usr/lib"
+        "/usr/local/lib"
+        "/lib64"
+        "/usr/lib64"
+        "/usr/local/lib64"
     PATH_SUFFIXES
         "mysql")
 
