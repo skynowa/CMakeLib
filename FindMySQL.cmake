@@ -2,8 +2,7 @@
 # \file  FindMySQL.cmake
 # \brief Find the native MySQL includes and library
 #
-# MYSQL_FOUND     - true if MySQL found
-# xHAVE_MYSQL     - true if MySQL found (source used)
+# cmMYSQL_FOUND   - true if MySQL found
 # MYSQL_INCLUDES  - where to find mysql.h, etc
 # MYSQL_LIBRARIES - list of libraries when using MySQL
 #--------------------------------------------------------------------------------------------------
@@ -61,19 +60,18 @@ else()
 endif()
 
 if (NOT (MYSQL_INCLUDES AND MYSQL_LIBRARIES))
-    set(MYSQL_FOUND 0)
+    set(cmMYSQL_FOUND 0)
     set(MYSQL_INCLUDES "")
     set(MYSQL_LIBRARIES "")
 else()
-    set(MYSQL_FOUND 1)
-    set(xHAVE_MYSQL 1)
+    set(cmMYSQL_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT MYSQL_FOUND AND MYSQL_FIND_REQUIRED)
-    message(FATAL_ERROR "MYSQL_FOUND: ${MYSQL_FOUND}")
+if (NOT cmMYSQL_FOUND AND MYSQL_FIND_REQUIRED)
+    message(FATAL_ERROR "cmMYSQL_FOUND: ${cmMYSQL_FOUND}")
 else()
-    # message(STATUS "MYSQL_FOUND: ${MYSQL_FOUND}")
+    # message(STATUS "cmMYSQL_FOUND: ${cmMYSQL_FOUND}")
     # message("     MYSQL_INCLUDES: ${MYSQL_INCLUDES}")
     # message("     MYSQL_LIBRARIES: ${MYSQL_LIBRARIES}")
 endif()
