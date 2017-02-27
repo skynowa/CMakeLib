@@ -1,0 +1,34 @@
+### DELETE begin ###
+[BinName]     - binary name
+[RealBinName] - real binary name
+[BIN_NAME]    - binary name
+### DELETE end ###
+
+
+#--------------------------------------------------------------------------------------------------
+# \file  Find[BinName].cmake
+# \brief Find addr2Line
+#
+# cm[BIN_NAME]_FOUND     - true if found
+# cm[BIN_NAME]_FILE_PATH - where to find includes
+#--------------------------------------------------------------------------------------------------
+
+
+#--------------------------------------------------------------------------------------------------
+find_file(cm[BIN_NAME]_FILE_PATH "[RealBinName]")
+
+if (cm[BIN_NAME]_FILE_PATH STREQUAL "cm[BIN_NAME]_FILE_PATH-NOTFOUND")
+    set(cm[BIN_NAME]_FOUND 0)
+    set(cm[BIN_NAME]_FILE_PATH "")
+else()
+    set(cm[BIN_NAME]_FOUND 1)
+endif()
+#--------------------------------------------------------------------------------------------------
+# trace
+if (NOT cm[BIN_NAME]_FOUND AND [BIN_NAME]_FIND_REQUIRED)
+    message(FATAL_ERROR "cm[BIN_NAME]_FOUND: ${cm[BIN_NAME]_FOUND}")
+else()
+    # message(STATUS "cm[BIN_NAME]_FOUND: ${cm[BIN_NAME]_FOUND}")
+    # message("     cm[BIN_NAME]_FILE_PATH: ${cm[BIN_NAME]_FILE_PATH}")
+endif()
+#--------------------------------------------------------------------------------------------------
