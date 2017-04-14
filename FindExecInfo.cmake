@@ -1,10 +1,11 @@
 #--------------------------------------------------------------------------------------------------
 # \file  FindExecInfo.cmake
-# \brief Find libexecinfo
+# \brief Find ExecInfo includes and library
 #
-# cmEXECINFO_FOUND   - true if libexecinfo found
-# EXECINFO_INCLUDES  - where to find libexecinfo includes
-# EXECINFO_LIBRARIES - list of libraries when using libexecinfo
+# EXECINFO_FOUND     - true if system has library
+# EXECINFO_INCLUDES  - include directories
+# EXECINFO_LIBRARIES - libraries
+# xHAVE_EXECINFO     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -13,42 +14,34 @@ find_path(EXECINFO_INCLUDES
     NAMES
         "execinfo.h"
     PATHS
-        "/usr/include"
         "/usr/local/include"
+        "/usr/include"
     PATH_SUFFIXES
-        "")
+        "execinfo")
 
 find_library(EXECINFO_LIBRARIES
     NAMES
         "execinfo"
     PATHS
-        "/lib"
-        "/lib64"
-        "/usr/lib"
-        "/usr/lib64"
         "/usr/local/lib"
-        "/usr/local/lib64"
+        "/usr/lib"
     PATH_SUFFIXES
-        "")
+        "execinfo")
 
-if (EXECINFO_INCLUDES STREQUAL "EXECINFO_INCLUDES-NOTFOUND")
-    set(cmEXECINFO_FOUND 0)
+if (NOT (EXECINFO_INCLUDES AND EXECINFO_LIBRARIES))
+    set(EXECINFO_FOUND 0)
     set(EXECINFO_INCLUDES "")
     set(EXECINFO_LIBRARIES "")
 else()
-    set(cmEXECINFO_FOUND 1)
-
-    if (EXECINFO_LIBRARIES STREQUAL "EXECINFO_LIBRARIES-NOTFOUND")
-        # Built-in, no further action is needed
-        set(EXECINFO_LIBRARIES "")
-    endif()
+    set(EXECINFO_FOUND 1)
+    set(xHAVE_EXECINFO 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT cmEXECINFO_FOUND AND EXECINFO_FIND_REQUIRED)
-    message(FATAL_ERROR "cmEXECINFO_FOUND: ${cmEXECINFO_FOUND}")
+if (NOT EXECINFO_FOUND AND ExecInfo_FIND_REQUIRED)
+    message(FATAL_ERROR "EXECINFO_FOUND: ${EXECINFO_FOUND}")
 else()
-    # message(STATUS "cmEXECINFO_FOUND: ${cmEXECINFO_FOUND}")
+    message(STATUS "EXECINFO_FOUND: ${EXECINFO_FOUND}")
     # message("     EXECINFO_INCLUDES: ${EXECINFO_INCLUDES}")
     # message("     EXECINFO_LIBRARIES: ${EXECINFO_LIBRARIES}")
 endif()
