@@ -8,7 +8,7 @@
 
 
 #--------------------------------------------------------------------------------------------------
-find_file(cmCLANG_TIDY_FILE_PATH "clang-tidy")
+find_program(cmCLANG_TIDY_FILE_PATH "clang-tidy")
 
 if (cmCLANG_TIDY_FILE_PATH STREQUAL "cmCLANG_TIDY_FILE_PATH-NOTFOUND")
     set(cmCLANG_TIDY_FOUND 0)
