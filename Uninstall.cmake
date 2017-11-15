@@ -1,6 +1,6 @@
 #--------------------------------------------------------------------------------------------------
 # \file  Uninstall.cmake
-# \brief Uninstall WTS
+# \brief Uninstall target
 #--------------------------------------------------------------------------------------------------
 
 
@@ -8,7 +8,7 @@
 set(MANIFEST "${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt")
 
 if (NOT EXISTS "${MANIFEST}")
-	message(WARNING "Can't find install manifest: ${MANIFEST}")
+	message(WARNING "Uninstall - skipped, can't find install manifest: ${MANIFEST}")
 else()
 	file(READ "${MANIFEST}" files)
 	string(REGEX REPLACE "\n" ";" files "${files}")
@@ -34,7 +34,7 @@ endif()
 message(STATUS "Uninstalling ${WTS_INSTALL_PATH}")
 
 if (NOT EXISTS "${WTS_INSTALL_PATH}")
-    message(STATUS "Directory ${WTS_INSTALL_PATH} does not exist.")
+    message(STATUS "Uninstall - skipped, directory ${WTS_INSTALL_PATH} does not exist.")
 else()
     exec_program("${CMAKE_COMMAND}"
         ARGS "-E remove_directory \"${WTS_INSTALL_PATH}\""
