@@ -1,4 +1,5 @@
 # additional target to perform cppcheck run, requires cppcheck
+# https://arcanis.me/ru/2015/10/17/cppcheck-and-clang-format
 
 # get all project files
 # HACK this workaround is required to avoid qml files checking ^_^
