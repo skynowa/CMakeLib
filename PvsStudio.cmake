@@ -17,10 +17,12 @@ function(perform_pvs_studio)
     set(CPU_NUMBER            "0")
 
     if (NOT EXISTS "${COMPILE_COMMANDS_FILE}")
-       message(FATAL "COMPILE_COMMANDS_FILE: ${COMPILE_COMMANDS_FILE} - not exists")
+       message(FATAL_ERROR "COMPILE_COMMANDS_FILE: ${COMPILE_COMMANDS_FILE} - not exists")
     endif()
 
+    # CPU_NUMBER
     ProcessorCount(CPU_NUMBER)
+    math(EXPR CPU_NUMBER "${CPU_NUMBER}*2")
 
     add_custom_target(pvs-studio
         COMMAND
