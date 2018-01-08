@@ -15,6 +15,7 @@ find_program(CPP_CHECK_FILE_PATH
         "/bin"
         "/usr/bin"
         "/usr/local/bin"
+        "/opt"
     DOC
         "A tool for static C/C++ code analysis")
 
@@ -26,7 +27,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT CPP_CHECK_FOUND AND CPP_CHECK_FIND_REQUIRED)
+if (NOT CPP_CHECK_FOUND AND CppCheck_FIND_REQUIRED)
     message(FATAL_ERROR "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")
 else()
     message(STATUS "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")

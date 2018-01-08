@@ -36,7 +36,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT cmGIT_REVISION_FOUND AND GIT_REVISION_FIND_REQUIRED)
+if (NOT cmGIT_REVISION_FOUND AND GitRevision_FIND_REQUIRED)
     message(FATAL_ERROR "cmGIT_REVISION_FOUND: ${cmGIT_REVISION_FOUND}")
 else()
     # message(STATUS "cmGIT_REVISION_FOUND: ${cmGIT_REVISION_FOUND}")

@@ -12,7 +12,7 @@
 # \brief Find [RealProgramName]
 #
 # [CM_PREFIX][PROGRAM_NAME]_FOUND     - true if found
-# [CM_PREFIX][PROGRAM_NAME]_FILE_PATH - where to find includes
+# [CM_PREFIX][PROGRAM_NAME]_FILE_PATH - where to find program
 #--------------------------------------------------------------------------------------------------
 
 
@@ -24,6 +24,7 @@ find_program([CM_PREFIX][PROGRAM_NAME]_FILE_PATH
         "/bin"
         "/usr/bin"
         "/usr/local/bin"
+        "/opt"
     DOC
         "[Comments]")
 
@@ -35,7 +36,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT [CM_PREFIX][PROGRAM_NAME]_FOUND AND [PROGRAM_NAME]_FIND_REQUIRED)
+if (NOT [CM_PREFIX][PROGRAM_NAME]_FOUND AND [ProgramName]_FIND_REQUIRED)
     message(FATAL_ERROR "[CM_PREFIX][PROGRAM_NAME]_FOUND: ${[CM_PREFIX][PROGRAM_NAME]_FOUND}")
 else()
     # message(STATUS "[CM_PREFIX][PROGRAM_NAME]_FOUND: ${[CM_PREFIX][PROGRAM_NAME]_FOUND}")

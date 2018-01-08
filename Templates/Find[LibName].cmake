@@ -1,20 +1,22 @@
 ### DELETE begin ###
+[PackageName]       - package name
 [LIB_NAME]          - lib name
+[lib_names]         - lib names
+[RealLibName]       - real lib name
 [LIB_H]             - lib header file
 [LIB_PATH_SUFFIXES] - lib path suffix
-[lib_names]         - lib name
-[LibNameReal]       - real lib name
+[Comments]           - comments
 ### DELETE end ###
 
 
 #--------------------------------------------------------------------------------------------------
-# \file  Find[LibNameReal].cmake
-# \brief Find [LibNameReal] includes and library
+# \file  Find[PackageName].cmake
+# \brief Find [RealLibName] includes and library
 #
 # [LIB_NAME]_FOUND     - true if system has library
+# xHAVE_[LIB_NAME]     - true if found (source used)
 # [LIB_NAME]_INCLUDES  - include directories
 # [LIB_NAME]_LIBRARIES - libraries
-# xHAVE_[LIB_NAME]     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -26,14 +28,20 @@ find_path([LIB_NAME]_INCLUDES
         "/usr/local/include"
         "/usr/include"
     PATH_SUFFIXES
-        "[LIB_PATH_SUFFIXES]")
+        "[LIB_PATH_SUFFIXES]"
+    DOC
+        "[Comments]")
 
 find_library([LIB_NAME]_LIBRARIES
     NAMES
-        "[lib_names]"
+        [lib_names]
     PATHS
-        "/usr/local/lib"
+        "/lib"
+        "/lib64"
         "/usr/lib"
+        "/usr/lib64"
+        "/usr/local/lib"
+        "/usr/local/lib64"
     PATH_SUFFIXES
         "[LIB_PATH_SUFFIXES]")
 
@@ -47,10 +55,10 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT [LIB_NAME]_FOUND AND [LibNameReal]_FIND_REQUIRED)
+if (NOT [LIB_NAME]_FOUND AND [PackageName]_FIND_REQUIRED)
     message(FATAL_ERROR "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
 else()
-    message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
+    # message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
     # message("     [LIB_NAME]_INCLUDES: ${[LIB_NAME]_INCLUDES}")
     # message("     [LIB_NAME]_LIBRARIES: ${[LIB_NAME]_LIBRARIES}")
 endif()

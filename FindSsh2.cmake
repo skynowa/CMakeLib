@@ -40,7 +40,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT cmSSH2_FOUND AND SSH2_FIND_REQUIRED)
+if (NOT cmSSH2_FOUND AND Ssh2_FIND_REQUIRED)
     message(FATAL_ERROR "cmSSH2_FOUND: ${cmSSH2_FOUND}")
 else()
     # message(STATUS "cmSSH2_FOUND: ${cmSSH2_FOUND}")

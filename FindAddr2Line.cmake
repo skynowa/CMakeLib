@@ -18,7 +18,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT cmADDR2LINE_FOUND AND ADDR2LINE_FIND_REQUIRED)
+if (NOT cmADDR2LINE_FOUND AND Addr2Line_FIND_REQUIRED)
     message(FATAL_ERROR "cmADDR2LINE_FOUND: ${cmADDR2LINE_FOUND}")
 else()
     # message(STATUS "cmADDR2LINE_FOUND: ${cmADDR2LINE_FOUND}")

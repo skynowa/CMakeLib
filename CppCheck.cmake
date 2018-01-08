@@ -8,7 +8,7 @@
 
 
 function(perform_cppcheck)
-    message(STATUS "ARGN: ${ARGN}")
+    # message(STATUS "ARGN: ${ARGN}")
 
     add_custom_target(cppcheck
         COMMAND
