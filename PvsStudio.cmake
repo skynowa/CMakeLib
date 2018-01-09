@@ -7,9 +7,7 @@
 #--------------------------------------------------------------------------------------------------
 
 
-
-
-function(perform_pvs_studio JOBS_NUM)
+function(target_pvs_studio JOBS_NUM)
     set(TARGET_NAME           "pvs-studio")
 
     set(COMPILE_COMMANDS_FILE "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json")

@@ -7,8 +7,8 @@
 #--------------------------------------------------------------------------------------------------
 
 
-function(perform_cppcheck JOBS_NUM)
-    set(TARGET_NAME "cppcheck")
+function(target_cpp_check JOBS_NUM)
+    set(TARGET_NAME "cpp-check")
 
     add_custom_target(${TARGET_NAME}
         COMMAND
