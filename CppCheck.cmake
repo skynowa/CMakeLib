@@ -24,5 +24,7 @@ function(perform_cppcheck)
                 --quiet
                 ${ARGN}
         WORKING_DIRECTORY
-            ${CMAKE_CURRENT_SOURCE_DIR})
+            ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT
+            "Cppcheck analyze...")
 endfunction()

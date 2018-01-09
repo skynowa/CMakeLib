@@ -51,6 +51,7 @@ else()
             "/lib64/mysql"
             "/usr/lib/mysql"
             "/usr/lib64/mysql"
+            "/usr/lib/x86_64-linux-gnu"
             "/usr/local/lib/mysql"
             "/usr/local/lib64/mysql"
             "/usr/mysql/lib/mysql"
