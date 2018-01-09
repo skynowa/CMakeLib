@@ -7,24 +7,19 @@
 #--------------------------------------------------------------------------------------------------
 
 
-include(ProcessorCount)
 
-function(perform_pvs_studio)
+
+function(perform_pvs_studio JOBS_NUM)
     set(TARGET_NAME           "pvs-studio")
 
     set(COMPILE_COMMANDS_FILE "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json")
     set(CFG_FILE              "$ENV{HOME}/.config/PVS-Studio/PVS-Studio.cfg")
     set(LOG_DIR_HTML          "$ENV{HOME}/.config/PVS-Studio/PVS-Studio_html")
     set(LOG_FILE              "$ENV{HOME}/.config/PVS-Studio/PVS-Studio.log")
-    set(CPU_NUMBER            0)
 
     # if (NOT EXISTS "${COMPILE_COMMANDS_FILE}")
     #    message(FATAL_ERROR "COMPILE_COMMANDS_FILE: ${COMPILE_COMMANDS_FILE} - not exists")
     # endif()
-
-    # CPU_NUMBER
-    ProcessorCount(CPU_NUMBER)
-    math(EXPR CPU_NUMBER "${CPU_NUMBER}*2")
 
     if(EXISTS "${LOG_DIR_HTML}")
         file(REMOVE_RECURSE ${LOG_DIR_HTML})
@@ -39,7 +34,7 @@ function(perform_pvs_studio)
             ${PVS_STUDIO_ANALYZER_FILE_PATH}
                 analyze
                 --cfg ${CFG_FILE}
-                -j${CPU_NUMBER} || exit 0
+                -j${JOBS_NUM} || exit 0
         WORKING_DIRECTORY
             ${CMAKE_CURRENT_BINARY_DIR}
         COMMENT

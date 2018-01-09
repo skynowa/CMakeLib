@@ -7,7 +7,7 @@
 #--------------------------------------------------------------------------------------------------
 
 
-function(perform_cppcheck)
+function(perform_cppcheck JOBS_NUM)
     set(TARGET_NAME "cppcheck")
 
     add_custom_target(${TARGET_NAME}
@@ -22,6 +22,7 @@ function(perform_cppcheck)
                 --report-progress
                 --verbose
                 --quiet
+                -j${JOBS_NUM}
                 ${ARGN}
         WORKING_DIRECTORY
             ${CMAKE_CURRENT_SOURCE_DIR}
