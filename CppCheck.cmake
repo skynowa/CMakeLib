@@ -8,9 +8,9 @@
 
 
 function(perform_cppcheck)
-    # message(STATUS "ARGN: ${ARGN}")
+    set(TARGET_NAME "cppcheck")
 
-    add_custom_target(cppcheck
+    add_custom_target(${TARGET_NAME}
         COMMAND
             ${CPP_CHECK_FILE_PATH}
                 --check-config
