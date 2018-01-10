@@ -51,6 +51,7 @@ function(target_cpp_check JOBS_NUM SOURCE_DIR)
         COMMAND
             ${CPP_CHECK_HTML_REPORT_FILE_PATH}
                 --report-dir=${LOG_DIR_HTML}
+                --source-dir=${SOURCE_DIR}
                 --file=${LOG_FILE}
                 --title=xLib
                 --source-encoding=UTF-8
