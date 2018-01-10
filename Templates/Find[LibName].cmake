@@ -56,10 +56,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT [LIB_NAME]_FOUND AND [PackageName]_FIND_REQUIRED)
+    message("     [LIB_NAME]_INCLUDES: ${[LIB_NAME]_INCLUDES}")
+    message("     [LIB_NAME]_LIBRARIES: ${[LIB_NAME]_LIBRARIES}")
+
     message(FATAL_ERROR "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
 else()
-    # message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
-    # message("     [LIB_NAME]_INCLUDES: ${[LIB_NAME]_INCLUDES}")
-    # message("     [LIB_NAME]_LIBRARIES: ${[LIB_NAME]_LIBRARIES}")
+    message(STATUS "[LIB_NAME]_FOUND: ${[LIB_NAME]_FOUND}")
 endif()
 #--------------------------------------------------------------------------------------------------

@@ -30,16 +30,16 @@ find_program([CM_PREFIX][PROGRAM_NAME]_FILE_PATH
 
 if ([CM_PREFIX][PROGRAM_NAME]_FILE_PATH STREQUAL "[CM_PREFIX][PROGRAM_NAME]_FILE_PATH-NOTFOUND")
     set([CM_PREFIX][PROGRAM_NAME]_FOUND 0)
-    set([CM_PREFIX][PROGRAM_NAME]_FILE_PATH "")
 else()
     set([CM_PREFIX][PROGRAM_NAME]_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT [CM_PREFIX][PROGRAM_NAME]_FOUND AND [ProgramName]_FIND_REQUIRED)
+    message("     [CM_PREFIX][PROGRAM_NAME]: ${[CM_PREFIX][PROGRAM_NAME]}")
+
     message(FATAL_ERROR "[CM_PREFIX][PROGRAM_NAME]_FOUND: ${[CM_PREFIX][PROGRAM_NAME]_FOUND}")
 else()
-    # message(STATUS "[CM_PREFIX][PROGRAM_NAME]_FOUND: ${[CM_PREFIX][PROGRAM_NAME]_FOUND}")
-    # message("     [CM_PREFIX][PROGRAM_NAME]_FILE_PATH: ${[CM_PREFIX][PROGRAM_NAME]_FILE_PATH}")
+    message(STATUS "[CM_PREFIX][PROGRAM_NAME]_FOUND: ${[CM_PREFIX][PROGRAM_NAME]_FOUND}")
 endif()
 #--------------------------------------------------------------------------------------------------

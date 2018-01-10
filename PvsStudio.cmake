@@ -23,7 +23,7 @@ function(target_pvs_studio JOBS_NUM)
         file(REMOVE_RECURSE ${LOG_DIR_HTML})
     endif()
 
-    add_custom_target(pvs-studio)
+    add_custom_target(${TARGET_NAME})
 
     add_custom_command(
         TARGET
