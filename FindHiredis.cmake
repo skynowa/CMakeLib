@@ -39,10 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT HIREDIS_FOUND AND Hiredis_FIND_REQUIRED)
+    message("     HIREDIS_INCLUDES: ${HIREDIS_INCLUDES}")
+    message("     HIREDIS_LIBRARIES: ${HIREDIS_LIBRARIES}")
+
     message(FATAL_ERROR "HIREDIS_FOUND: ${HIREDIS_FOUND}")
 else()
     message(STATUS "HIREDIS_FOUND: ${HIREDIS_FOUND}")
-    # message("     HIREDIS_INCLUDES: ${HIREDIS_INCLUDES}")
-    # message("     HIREDIS_LIBRARIES: ${HIREDIS_LIBRARIES}")
 endif()
 #--------------------------------------------------------------------------------------------------

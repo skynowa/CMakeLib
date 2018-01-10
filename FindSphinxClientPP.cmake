@@ -39,10 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT SPHINXCLIENTPP_FOUND AND SphinxClientPP_FIND_REQUIRED)
+    message("     SPHINXCLIENTPP_INCLUDES: ${SPHINXCLIENTPP_INCLUDES}")
+    message("     SPHINXCLIENTPP_LIBRARIES: ${SPHINXCLIENTPP_LIBRARIES}")
+
     message(FATAL_ERROR "SPHINXCLIENTPP_FOUND: ${SPHINXCLIENTPP_FOUND}")
 else()
     message(STATUS "SPHINXCLIENTPP_FOUND: ${SPHINXCLIENTPP_FOUND}")
-    # message("     SPHINXCLIENTPP_INCLUDES: ${SPHINXCLIENTPP_INCLUDES}")
-    # message("     SPHINXCLIENTPP_LIBRARIES: ${SPHINXCLIENTPP_LIBRARIES}")
 endif()
 #--------------------------------------------------------------------------------------------------

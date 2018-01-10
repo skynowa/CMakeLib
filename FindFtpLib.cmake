@@ -39,10 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT FTPLIB_FOUND AND FtpLib_FIND_REQUIRED)
+    message("     FTPLIB_INCLUDES: ${FTPLIB_INCLUDES}")
+    message("     FTPLIB_LIBRARIES: ${FTPLIB_LIBRARIES}")
+
     message(FATAL_ERROR "FTPLIB_FOUND: ${FTPLIB_FOUND}")
 else()
     message(STATUS "FTPLIB_FOUND: ${FTPLIB_FOUND}")
-    # message("     FTPLIB_INCLUDES: ${FTPLIB_INCLUDES}")
-    # message("     FTPLIB_LIBRARIES: ${FTPLIB_LIBRARIES}")
 endif()
 #--------------------------------------------------------------------------------------------------

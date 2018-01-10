@@ -70,10 +70,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT cmMYSQL_FOUND AND MySQL_FIND_REQUIRED)
+    message("     MYSQL_INCLUDES: ${MYSQL_INCLUDES}")
+    message("     MYSQL_LIBRARIES: ${MYSQL_LIBRARIES}")
+
     message(FATAL_ERROR "cmMYSQL_FOUND: ${cmMYSQL_FOUND}")
 else()
-    # message(STATUS "cmMYSQL_FOUND: ${cmMYSQL_FOUND}")
-    # message("     MYSQL_INCLUDES: ${MYSQL_INCLUDES}")
-    # message("     MYSQL_LIBRARIES: ${MYSQL_LIBRARIES}")
+    message(STATUS "cmMYSQL_FOUND: ${cmMYSQL_FOUND}")
 endif()
 #--------------------------------------------------------------------------------------------------

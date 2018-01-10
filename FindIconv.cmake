@@ -39,10 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT ICONV_FOUND AND Iconv_FIND_REQUIRED)
+    message("     ICONV_INCLUDES: ${ICONV_INCLUDES}")
+    message("     ICONV_LIBRARIES: ${ICONV_LIBRARIES}")
+
     message(FATAL_ERROR "ICONV_FOUND: ${ICONV_FOUND}")
 else()
     message(STATUS "ICONV_FOUND: ${ICONV_FOUND}")
-    # message("     ICONV_INCLUDES: ${ICONV_INCLUDES}")
-    # message("     ICONV_LIBRARIES: ${ICONV_LIBRARIES}")
 endif()
 #--------------------------------------------------------------------------------------------------

@@ -39,10 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT MEMCACHED_FOUND AND MemCached_FIND_REQUIRED)
+    message("     MEMCACHED_INCLUDES: ${MEMCACHED_INCLUDES}")
+    message("     MEMCACHED_LIBRARIES: ${MEMCACHED_LIBRARIES}")
+
     message(FATAL_ERROR "MEMCACHED_FOUND: ${MEMCACHED_FOUND}")
 else()
     message(STATUS "MEMCACHED_FOUND: ${MEMCACHED_FOUND}")
-    # message("     MEMCACHED_INCLUDES: ${MEMCACHED_INCLUDES}")
-    # message("     MEMCACHED_LIBRARIES: ${MEMCACHED_LIBRARIES}")
 endif()
 #--------------------------------------------------------------------------------------------------

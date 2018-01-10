@@ -39,10 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT EXECINFO_FOUND AND ExecInfo_FIND_REQUIRED)
+    message("     EXECINFO_INCLUDES: ${EXECINFO_INCLUDES}")
+    message("     EXECINFO_LIBRARIES: ${EXECINFO_LIBRARIES}")
+
     message(FATAL_ERROR "EXECINFO_FOUND: ${EXECINFO_FOUND}")
 else()
     message(STATUS "EXECINFO_FOUND: ${EXECINFO_FOUND}")
-    # message("     EXECINFO_INCLUDES: ${EXECINFO_INCLUDES}")
-    # message("     EXECINFO_LIBRARIES: ${EXECINFO_LIBRARIES}")
 endif()
 #--------------------------------------------------------------------------------------------------

@@ -38,7 +38,7 @@ elseif (CMAKE_COMPILER_IS_GNUCXX)
         include(CMake/CxxFlags_gcc_4.6.4.cmake)
     endif()
 else()
-    message("xLib: unknown compiler")
+    message("Unknown compiler")
 endif()
 
 if (OS_ANDROID)
