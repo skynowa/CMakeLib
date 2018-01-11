@@ -3,7 +3,7 @@
 # \brief Find clang-tidy
 #
 # CLANG_TIDY_FOUND     - true if found
-# CLANG_TIDY_FILE_PATH - where to find includes
+# CLANG_TIDY_FILE_PATH - clang-tidy path
 #--------------------------------------------------------------------------------------------------
 
 
@@ -11,6 +11,10 @@
 find_program(CLANG_TIDY_FILE_PATH
     NAMES
         "clang-tidy"
+        "clang-tidy-5.0"
+        "clang-tidy-4.0"
+        "clang-tidy39"
+        "clang-tidy38"
     PATHS
         "/bin"
         "/usr/bin"
@@ -21,7 +25,6 @@ find_program(CLANG_TIDY_FILE_PATH
 
 if (CLANG_TIDY_FILE_PATH STREQUAL "CLANG_TIDY_FILE_PATH-NOTFOUND")
     set(CLANG_TIDY_FOUND 0)
-    set(CLANG_TIDY_FILE_PATH "")
 else()
     set(CLANG_TIDY_FOUND 1)
 endif()
