@@ -6,7 +6,7 @@
 #--------------------------------------------------------------------------------------------------
 
 
-function(target_clang_tidy JOBS_NUM INCLUDES HEADERS SOURCES)
+function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
     set(TARGET_NAME       "clang-tidy")
 
     set(COMPILE_COMMANDS_DIR  "${CMAKE_CURRENT_BINARY_DIR}")
@@ -20,7 +20,6 @@ function(target_clang_tidy JOBS_NUM INCLUDES HEADERS SOURCES)
 
     message("COMPILE_COMMANDS_DIR: ${COMPILE_COMMANDS_DIR}")
     message("INCLUDES: ${INCLUDES}")
-    # message("HEADERS:  ${HEADERS}")
     # message("SOURCES:  ${SOURCES}")
 
 
