@@ -2,8 +2,7 @@
 # \file  CppCheck.cmake
 # \brief Function to register a target_dir for cppcheck
 #
-# https://arcanis.me/ru/2015/10/17/cppcheck-and-clang-format
-#
+# https://www.viva64.com/ru/pvs-studio/
 #--------------------------------------------------------------------------------------------------
 
 

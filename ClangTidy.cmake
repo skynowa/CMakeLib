@@ -1,9 +1,8 @@
 #--------------------------------------------------------------------------------------------------
 # \file  ClangTidy.cmake
-# \brief Function to register a target_dir for cppcheck
+# \brief
 #
-# https://arcanis.me/ru/2015/10/17/cppcheck-and-clang-format
-#
+# http://clang.llvm.org/extra/clang-tidy/
 #--------------------------------------------------------------------------------------------------
 
 
