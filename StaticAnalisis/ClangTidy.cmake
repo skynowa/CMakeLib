@@ -3,6 +3,7 @@
 # \brief
 #
 # http://clang.llvm.org/extra/clang-tidy/
+# Disable warning in C++ code - use commet: // NOLINT
 #--------------------------------------------------------------------------------------------------
 
 
@@ -12,6 +13,8 @@ function(clang_tidy_suppressions SUPPRESSIONS_FILE SUPPRESSIONS_STR)
 
     file(READ "${SUPPRESSIONS_FILE}" FILE_CONTENT)
     string(REGEX REPLACE "\n" "," FILE_CONTENT "${FILE_CONTENT}")
+
+    set(FILE_CONTENT "${FILE_CONTENT}-") # fix last comma
 
     set(${SUPPRESSIONS_STR} "${FILE_CONTENT}" PARENT_SCOPE)
 endfunction()
@@ -28,8 +31,11 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
     #     file(REMOVE_RECURSE ${LOG_DIR_HTML})
     # endif()
 
+    # suppresiions
+    # clang-tidy -checks='*' --list-checks
     set(SUPPRESSIONS_STR "")
     clang_tidy_suppressions(${SUPPRESSIONS_FILE} SUPPRESSIONS_STR)
+    message(STATUS "SUPPRESSIONS_STR: ${SUPPRESSIONS_STR}")
 
     add_custom_target(${TARGET_NAME})
 
@@ -40,8 +46,9 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
             ${CLANG_TIDY_FILE_PATH}
                 -config=''
                 -export-fixes=${LOG_FILE}
-                --header-filter='.*'
-                -checks=${SUPPRESSIONS_STR}
+                # -fix-errors
+                -header-filter='.*'
+                -checks='${SUPPRESSIONS_STR}'
                 -analyze-temporary-dtors
                 -p=${COMPILE_COMMANDS_DIR}
                 ${SOURCES}
