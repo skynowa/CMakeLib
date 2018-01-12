@@ -6,22 +6,30 @@
 #--------------------------------------------------------------------------------------------------
 
 
-function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
-    set(TARGET_NAME       "clang-tidy")
+# Build suppresion string from file
+function(clang_tidy_suppressions SUPPRESSIONS_FILE SUPPRESSIONS_STR)
+    set(FILE_CONTENT "")
 
-    set(COMPILE_COMMANDS_DIR  "${CMAKE_CURRENT_BINARY_DIR}")
-    # set(SUPPRESSIONS_FILE "$ENV{HOME}/.config/ClangTidy/suppressions.txt")
+    file(READ "${SUPPRESSIONS_FILE}" FILE_CONTENT)
+    string(REGEX REPLACE "\n" "," FILE_CONTENT "${FILE_CONTENT}")
+
+    set(${SUPPRESSIONS_STR} "${FILE_CONTENT}" PARENT_SCOPE)
+endfunction()
+
+function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
+    set(TARGET_NAME          "clang-tidy")
+
+    set(COMPILE_COMMANDS_DIR "${CMAKE_CURRENT_BINARY_DIR}")
+    set(SUPPRESSIONS_FILE    "$ENV{HOME}/.config/ClangTidy/suppressions.txt")
     # set(LOG_DIR_HTML      "$ENV{HOME}/.config/ClangTidy/ClangTidy_html")
-    set(LOG_FILE          "$ENV{HOME}/.config/ClangTidy/ClangTidy.yaml")
+    set(LOG_FILE             "$ENV{HOME}/.config/ClangTidy/ClangTidy.yaml")
 
     # if(EXISTS "${LOG_DIR_HTML}")
     #     file(REMOVE_RECURSE ${LOG_DIR_HTML})
     # endif()
 
-    message("COMPILE_COMMANDS_DIR: ${COMPILE_COMMANDS_DIR}")
-    message("INCLUDES: ${INCLUDES}")
-    # message("SOURCES:  ${SOURCES}")
-
+    set(SUPPRESSIONS_STR "")
+    clang_tidy_suppressions(${SUPPRESSIONS_FILE} SUPPRESSIONS_STR)
 
     add_custom_target(${TARGET_NAME})
 
@@ -33,7 +41,7 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
                 -config=''
                 -export-fixes=${LOG_FILE}
                 --header-filter='.*'
-                -checks='*'
+                -checks=${SUPPRESSIONS_STR}
                 -analyze-temporary-dtors
                 -p=${COMPILE_COMMANDS_DIR}
                 ${SOURCES}
