@@ -17,18 +17,24 @@ find_path(ICONV_INCLUDES
         "/usr/local/include"
         "/usr/include"
     PATH_SUFFIXES
-        "iconv")
+        "iconv"
+    DOC
+        "Convert between different character encodings")
 
 find_library(ICONV_LIBRARIES
     NAMES
         "iconv"
     PATHS
         "/usr/local/lib"
+        "/usr/local/lib64"
         "/usr/lib"
+        "/usr/lib64"
+        "/lib"
+        "/lib64"
     PATH_SUFFIXES
         "iconv")
 
-if (NOT (ICONV_INCLUDES AND ICONV_LIBRARIES))
+if (NOT (ICONV_INCLUDES))   # ICONV_LIBRARIES - unused
     set(ICONV_FOUND 0)
     set(ICONV_INCLUDES "")
     set(ICONV_LIBRARIES "")

@@ -36,12 +36,12 @@ find_library([LIB_NAME]_LIBRARIES
     NAMES
         [lib_names]
     PATHS
-        "/lib"
-        "/lib64"
-        "/usr/lib"
-        "/usr/lib64"
         "/usr/local/lib"
         "/usr/local/lib64"
+        "/usr/lib"
+        "/usr/lib64"
+        "/lib"
+        "/lib64"
     PATH_SUFFIXES
         "[LIB_PATH_SUFFIXES]")
 
