@@ -11,6 +11,11 @@
 find_program(CLANG_TIDY_FILE_PATH
     NAMES
         "clang-tidy"
+        "clang-tidy-10.0"
+        "clang-tidy-9.0"
+        "clang-tidy-8.0"
+        "clang-tidy-7.0"
+        "clang-tidy-6.0"
         "clang-tidy-5.0"
         "clang-tidy-4.0"
         "clang-tidy39"
