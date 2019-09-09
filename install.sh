@@ -6,7 +6,7 @@
 
 
 # vars
-DIR_PROJECT="."
+DIR_PROJECT="$PWD"
 DIR_BUILD="../CMakeLib_build"
 
 
