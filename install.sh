@@ -10,7 +10,9 @@ DIR_PROJECT="$PWD"
 DIR_BUILD="../CMakeLib_build"
 
 
-# build
+# Build
+echo "Build/Install ..."
+
 mkdir -p $DIR_BUILD
 cd $DIR_BUILD
 
