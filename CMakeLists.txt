@@ -48,11 +48,14 @@ install(
 #--------------------------------------------------------------------------------------------------
 # uninstall
 
-message(STATUS "PATH: ${CMAKE_DATA_DIR_DEFAULT}/CMakeLib")
+include(FindGlobalVariables.cmake)
+
+set(TARGET_DIR ${CMAKE_DATA_DIR_DEFAULT}/CMakeLib)
+message(STATUS "TARGET_DIR: ${TARGET_DIR}")
 
 add_custom_target(uninstall
 	COMMAND
 		${CMAKE_COMMAND}
-		-DPROJECT_INSTALL_PATH=${CMAKE_DATA_DIR_DEFAULT}/CMakeLib
+		-DPROJECT_INSTALL_PATH=${TARGET_DIR}
 		-P ${CMAKE_SOURCE_DIR}/Uninstall.cmake)
 #--------------------------------------------------------------------------------------------------
