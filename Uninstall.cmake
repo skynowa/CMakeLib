@@ -31,16 +31,16 @@ else()
 	endforeach()
 endif()
 #--------------------------------------------------------------------------------------------------
-message(STATUS "Uninstalling ${WTS_INSTALL_PATH}")
+message(STATUS "Uninstalling ${PROJECT_INSTALL_PATH}")
 
-if (NOT EXISTS "${WTS_INSTALL_PATH}")
-    message(STATUS "Uninstall - skipped, directory ${WTS_INSTALL_PATH} does not exist.")
+if (NOT EXISTS "${PROJECT_INSTALL_PATH}")
+    message(STATUS "Uninstall - skipped, directory ${PROJECT_INSTALL_PATH} does not exist.")
 else()
     exec_program("${CMAKE_COMMAND}"
-        ARGS "-E remove_directory \"${WTS_INSTALL_PATH}\""
+        ARGS "-E remove_directory \"${PROJECT_INSTALL_PATH}\""
         OUTPUT_VARIABLE rm_out RETURN_VALUE rm_retval)
     if (NOT "${rm_retval}" STREQUAL 0)
-        message(FATAL_ERROR "Problem when removing ${WTS_INSTALL_PATH}")
+        message(FATAL_ERROR "Problem when removing ${PROJECT_INSTALL_PATH}")
     endif()
 endif()
 #--------------------------------------------------------------------------------------------------

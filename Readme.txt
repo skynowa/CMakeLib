@@ -1,2 +1,0 @@
-CMakeLib - CMake library
-

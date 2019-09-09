@@ -18,6 +18,8 @@ cmake_minimum_required(VERSION 2.6)
 include(FindGlobalVariables.cmake)
 #--------------------------------------------------------------------------------------------------
 # install
+
+# dirs
 install(
     DIRECTORY
         ${CMAKE_SOURCE_DIR}
@@ -25,9 +27,29 @@ install(
         ${CMAKE_DATA_DIR_DEFAULT}
     FILES_MATCHING
         PATTERN "*"
-		PATTERN ".git"           EXCLUDE
-		PATTERN ".gitignore"     EXCLUDE
-		PATTERN "CMakeLists.txt" EXCLUDE
-        PATTERN "Templates"      EXCLUDE
-        PATTERN "install.sh"     EXCLUDE)
+        PATTERN ".git"                      EXCLUDE
+        PATTERN ".gitignore"                EXCLUDE
+        PATTERN "CMakeLists.txt"            EXCLUDE
+        PATTERN "Templates"                 EXCLUDE
+        PATTERN "install.sh"                EXCLUDE
+        PATTERN "uninstall.sh"              EXCLUDE
+        PATTERN "FindGlobalVariables.cmake" EXCLUDE
+        PATTERN "FindCMakeLib.cmake"        EXCLUDE
+)
+
+# files
+install(
+    FILES
+        FindGlobalVariables.cmake
+        FindCMakeLib.cmake
+    DESTINATION
+        ${CMAKE_DATA_DIR_DEFAULT})
+
+#--------------------------------------------------------------------------------------------------
+# uninstall
+add_custom_target(uninstall
+	COMMAND
+		${CMAKE_COMMAND}
+		-DPROJECT_INSTALL_PATH="${CMAKE_DATA_DIR_DEFAULT}/CMakeLib"
+		-P Uninstall.cmake)
 #--------------------------------------------------------------------------------------------------
