@@ -15,8 +15,7 @@ project("CMakeLib")
 cmake_minimum_required(VERSION 2.6)
 
 #--------------------------------------------------------------------------------------------------
-set(CMAKE_MAJOR_MINOR_VERSION "${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}")
-set(CMAKE_DATA_DIR_DEFAULT    "/usr/share/cmake-${CMAKE_MAJOR_MINOR_VERSION}/Modules")
+include(FindGlobalVariables.cmake)
 #--------------------------------------------------------------------------------------------------
 # install
 install(
