@@ -5,7 +5,7 @@
 
 
 #--------------------------------------------------------------------------------------------------.
-set(_QT5_MODULES Core Gui Widgets Sql Network Xml Concurrent)
+set(_QT5_MODULES Core Gui Widgets Sql Network Xml PrintSupport Concurrent)
 
 if (OS_ANDROID)
     set(_QT5_MODULES ${_QT5_MODULES} Qml Quick)
