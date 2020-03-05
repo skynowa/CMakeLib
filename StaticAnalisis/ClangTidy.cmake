@@ -35,7 +35,7 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
     # clang-tidy -checks='*' --list-checks
     set(SUPPRESSIONS_STR "")
     clang_tidy_suppressions(${SUPPRESSIONS_FILE} SUPPRESSIONS_STR)
-    message(STATUS "SUPPRESSIONS_STR: ${SUPPRESSIONS_STR}")
+    # message(STATUS "SUPPRESSIONS_STR: ${SUPPRESSIONS_STR}")
 
     add_custom_target(${TARGET_NAME})
 
