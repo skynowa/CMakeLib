@@ -6,6 +6,7 @@
 
 #--------------------------------------------------------------------------------------------------.
 set(_QT5_MODULES Core Gui Widgets Sql Network Xml PrintSupport Concurrent)
+# TODO: Multimedia (as Config.h:OPTION_QMEDIA_PLAYER)
 
 if (OS_ANDROID)
     set(_QT5_MODULES ${_QT5_MODULES} Qml Quick)
