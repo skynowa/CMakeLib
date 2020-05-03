@@ -21,7 +21,7 @@ find_path(XLib_INCLUDES
 
 find_library(XLib_LIBRARIES
     NAMES
-        "xLib"
+        "xLib_static"
     PATHS
         "/usr/local/lib"
         "/usr/lib"
@@ -30,8 +30,6 @@ find_library(XLib_LIBRARIES
 
 if (NOT (XLib_INCLUDES AND XLib_LIBRARIES))
     set(XLib_FOUND 0)
-    set(XLib_INCLUDES "")
-    set(XLib_LIBRARIES "")
 else()
     set(XLib_FOUND 1)
     set(xHAVE_XLib 1)
