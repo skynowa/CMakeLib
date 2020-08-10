@@ -2,7 +2,11 @@
 
 ## Install
 
-Use CMakeLists.txt or install.sh
+Use CMakeLists.txt or `install.sh`
+
+## Uninstall
+
+`uninstall.sh`
 
 ## Use in projects
 
