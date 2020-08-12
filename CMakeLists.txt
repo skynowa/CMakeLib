@@ -5,17 +5,13 @@
 # In project use CMake:
 #
 # # CMakeLib - CMAKE_MODULE_PATH
-# set(CMAKE_MAJOR_MINOR_VERSION "${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}")
-# set(CMAKE_DATA_DIR_DEFAULT    "/usr/share/cmake-${CMAKE_MAJOR_MINOR_VERSION}/Modules")
-# set(CMAKE_MODULE_PATH         "${CMAKE_DATA_DIR_DEFAULT}/CMakeLib;${CMAKE_MODULE_PATH}")
+# set(CMAKE_MODULE_PATH "${CMAKE_ROOT}/Modules/CMakeLib;${CMAKE_MODULE_PATH}")
 #--------------------------------------------------------------------------------------------------
 
 
 project("CMakeLib")
 cmake_minimum_required(VERSION 3.12)
 
-#--------------------------------------------------------------------------------------------------
-include(FindGlobalVariables.cmake)
 #--------------------------------------------------------------------------------------------------
 # install
 
@@ -24,34 +20,33 @@ install(
     DIRECTORY
         ${CMAKE_SOURCE_DIR}
     DESTINATION
-        ${CMAKE_DATA_DIR_DEFAULT}
+        ${CMAKE_ROOT}/Modules
     FILES_MATCHING
         PATTERN "*"
-        PATTERN ".git"                      EXCLUDE
-        PATTERN ".gitignore"                EXCLUDE
-        PATTERN "CMakeLists.txt"            EXCLUDE
-        PATTERN "Templates"                 EXCLUDE
-        PATTERN "install.sh"                EXCLUDE
-        PATTERN "uninstall.sh"              EXCLUDE
-        PATTERN "RepoSync.sh"               EXCLUDE
-        PATTERN "FindGlobalVariables.cmake" EXCLUDE
-        PATTERN "FindCMakeLib.cmake"        EXCLUDE
+        PATTERN ".git"               EXCLUDE
+        PATTERN ".gitignore"         EXCLUDE
+        PATTERN "CMakeLists.txt"     EXCLUDE
+        PATTERN "Templates"          EXCLUDE
+        PATTERN "install.sh"         EXCLUDE
+        PATTERN "uninstall.sh"       EXCLUDE
+        PATTERN "RepoSync.sh"        EXCLUDE
+        PATTERN "FindCMakeLib.cmake" EXCLUDE
+        PATTERN "Uninstall.cmake"    EXCLUDE
+        PATTERN "Uninstall.cmake"    EXCLUDE
+        PATTERN "Readme.md"          EXCLUDE
 )
 
 # files
 install(
     FILES
-        FindGlobalVariables.cmake
         FindCMakeLib.cmake
     DESTINATION
-        ${CMAKE_DATA_DIR_DEFAULT})
+        ${CMAKE_ROOT}/Modules)
 
 #--------------------------------------------------------------------------------------------------
 # uninstall
 
-include(FindGlobalVariables.cmake)
-
-set(TARGET_DIR ${CMAKE_DATA_DIR_DEFAULT}/CMakeLib)
+set(TARGET_DIR ${CMAKE_ROOT}/Modules/CMakeLib)
 message(STATUS "TARGET_DIR: ${TARGET_DIR}")
 
 add_custom_target(uninstall
