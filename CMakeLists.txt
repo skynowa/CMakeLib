@@ -12,7 +12,7 @@
 
 
 project("CMakeLib")
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.12)
 
 #--------------------------------------------------------------------------------------------------
 include(FindGlobalVariables.cmake)
@@ -33,6 +33,7 @@ install(
         PATTERN "Templates"                 EXCLUDE
         PATTERN "install.sh"                EXCLUDE
         PATTERN "uninstall.sh"              EXCLUDE
+        PATTERN "RepoSync.sh"               EXCLUDE
         PATTERN "FindGlobalVariables.cmake" EXCLUDE
         PATTERN "FindCMakeLib.cmake"        EXCLUDE
 )
