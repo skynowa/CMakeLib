@@ -24,7 +24,6 @@ find_program(CLANG_TIDY_FILE_PATH
         "/bin"
         "/usr/bin"
         "/usr/local/bin"
-        "/usr/lib/llvm-6.0/bin"
         "/opt"
     DOC
         "clang-based C++ “linter” tool")
