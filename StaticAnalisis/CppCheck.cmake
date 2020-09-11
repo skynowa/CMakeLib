@@ -9,9 +9,9 @@
 function(target_cpp_check JOBS_NUM SOURCE_DIR)
     set(TARGET_NAME       "cpp-check")
 
-    set(SUPPRESSIONS_FILE "$ENV{HOME}/.config/Cppcheck/suppressions.txt")
-    set(LOG_DIR_HTML      "$ENV{HOME}/.config/Cppcheck/CppCheck_html")
-    set(LOG_FILE          "$ENV{HOME}/.config/Cppcheck/CppCheck.xml")
+    set(SUPPRESSIONS_FILE "$ENV{HOME}/.config/StaticAnalisis/Cppcheck/suppressions.txt")
+    set(LOG_DIR_HTML      "$ENV{HOME}/.config/StaticAnalisis/Cppcheck/CppCheck_html")
+    set(LOG_FILE          "$ENV{HOME}/.config/StaticAnalisis/Cppcheck/CppCheck.xml")
 
     if(EXISTS "${LOG_DIR_HTML}")
         file(REMOVE_RECURSE ${LOG_DIR_HTML})

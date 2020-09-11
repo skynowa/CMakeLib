@@ -49,7 +49,7 @@ find_file(PVS_STUDIO_LIC_FILE_PATH
     NAMES
         "PVS-Studio.lic"
     PATHS
-        "$ENV{HOME}/.config/PVS-Studio"
+        "$ENV{HOME}/.config/StaticAnalisis/PVS-Studio"
     DOC
         "License file")
 
@@ -57,7 +57,7 @@ find_file(PVS_STUDIO_CFG_FILE_PATH
     NAMES
         "PVS-Studio.cfg"
     PATHS
-        "$ENV{HOME}/.config/PVS-Studio"
+        "$ENV{HOME}/.config/StaticAnalisis/PVS-Studio"
     DOC
         "Configuration file")
 

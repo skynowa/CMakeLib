@@ -10,9 +10,9 @@ function(target_pvs_studio JOBS_NUM)
     set(TARGET_NAME           "pvs-studio")
 
     set(COMPILE_COMMANDS_FILE "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json")
-    set(CFG_FILE              "$ENV{HOME}/.config/PVS-Studio/PVS-Studio.cfg")
-    set(LOG_DIR_HTML          "$ENV{HOME}/.config/PVS-Studio/PVS-Studio_html")
-    set(LOG_FILE              "$ENV{HOME}/.config/PVS-Studio/PVS-Studio.log")
+    set(CFG_FILE              "$ENV{HOME}/.config/StaticAnalisis/PVS-Studio/PVS-Studio.cfg")
+    set(LOG_DIR_HTML          "$ENV{HOME}/.config/StaticAnalisis/PVS-Studio/PVS-Studio_html")
+    set(LOG_FILE              "$ENV{HOME}/.config/StaticAnalisis/PVS-Studio/PVS-Studio.log")
 
     # if (NOT EXISTS "${COMPILE_COMMANDS_FILE}")
     #    message(FATAL_ERROR "COMPILE_COMMANDS_FILE: ${COMPILE_COMMANDS_FILE} - not exists")
