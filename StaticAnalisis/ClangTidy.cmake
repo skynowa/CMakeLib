@@ -25,7 +25,7 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
     set(COMPILE_COMMANDS_DIR "${CMAKE_CURRENT_BINARY_DIR}")
     set(SUPPRESSIONS_FILE    "$ENV{HOME}/.config/StaticAnalisis/ClangTidy/suppressions.txt")
     # set(LOG_DIR_HTML      "$ENV{HOME}/.config/StaticAnalisis/ClangTidy/ClangTidy_html")
-    set(LOG_FILE             "$ENV{HOME}/.configStaticAnalisis/ClangTidy/ClangTidy.yaml")
+    set(LOG_FILE             "$ENV{HOME}/.config/StaticAnalisis/ClangTidy/ClangTidy.yaml")
 
     # if(EXISTS "${LOG_DIR_HTML}")
     #     file(REMOVE_RECURSE ${LOG_DIR_HTML})
@@ -49,7 +49,7 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
                 # -fix-errors
                 -header-filter='.*'
                 -checks='${SUPPRESSIONS_STR}'
-                -analyze-temporary-dtors
+                # -analyze-temporary-dtors ???
                 -p=${COMPILE_COMMANDS_DIR}
                 ${SOURCES}
                 --
