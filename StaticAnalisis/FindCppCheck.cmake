@@ -43,11 +43,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT CPP_CHECK_FOUND AND CppCheck_FIND_REQUIRED)
-    message("     CPP_CHECK_FILE_PATH:             ${CPP_CHECK_FILE_PATH}")
-    message("     CPP_CHECK_HTML_REPORT_FILE_PATH: ${CPP_CHECK_HTML_REPORT_FILE_PATH}")
-
     message(FATAL_ERROR "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")
 else()
     message(STATUS "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")
 endif()
+
+message("     CPP_CHECK_FILE_PATH:             ${CPP_CHECK_FILE_PATH}")
+message("     CPP_CHECK_HTML_REPORT_FILE_PATH: ${CPP_CHECK_HTML_REPORT_FILE_PATH}")
 #--------------------------------------------------------------------------------------------------

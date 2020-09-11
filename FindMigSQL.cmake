@@ -39,11 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT MIGSQL_FOUND AND MigSQL_FIND_REQUIRED)
-    message("     MIGSQL_INCLUDES: ${MIGSQL_INCLUDES}")
-    message("     MIGSQL_LIBRARIES: ${MIGSQL_LIBRARIES}")
-
     message(FATAL_ERROR "MIGSQL_FOUND: ${MIGSQL_FOUND}")
 else()
     message(STATUS "MIGSQL_FOUND: ${MIGSQL_FOUND}")
 endif()
+
+message("     MIGSQL_INCLUDES: ${MIGSQL_INCLUDES}")
+message("     MIGSQL_LIBRARIES: ${MIGSQL_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

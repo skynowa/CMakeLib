@@ -50,11 +50,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT FASTCGI_FOUND AND FastCGI_FIND_REQUIRED)
-    message("     FASTCGI_INCLUDES: ${FASTCGI_INCLUDES}")
-    message("     FASTCGI_LIBRARIES: ${FASTCGI_LIBRARIES}")
-
     message(FATAL_ERROR "FASTCGI_FOUND: ${FASTCGI_FOUND}")
 else()
     message(STATUS "FASTCGI_FOUND: ${FASTCGI_FOUND}")
 endif()
+
+message("     FASTCGI_INCLUDES: ${FASTCGI_INCLUDES}")
+message("     FASTCGI_LIBRARIES: ${FASTCGI_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

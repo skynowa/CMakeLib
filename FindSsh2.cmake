@@ -42,11 +42,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT cmSSH2_FOUND AND Ssh2_FIND_REQUIRED)
-    message("     SSH2_INCLUDES: ${SSH2_INCLUDES}")
-    message("     SSH2_LIBRARIES: ${SSH2_LIBRARIES}")
-
     message(FATAL_ERROR "cmSSH2_FOUND: ${cmSSH2_FOUND}")
 else()
     message(STATUS "cmSSH2_FOUND: ${cmSSH2_FOUND}")
 endif()
+
+message("     SSH2_INCLUDES: ${SSH2_INCLUDES}")
+message("     SSH2_LIBRARIES: ${SSH2_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

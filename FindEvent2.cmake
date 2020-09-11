@@ -45,11 +45,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT EVENT2_FOUND AND Event_FIND_REQUIRED)
-    message("     EVENT2_INCLUDES: ${EVENT2_INCLUDES}")
-    message("     EVENT2_LIBRARIES: ${EVENT2_LIBRARIES}")
-
     message(FATAL_ERROR "EVENT2_FOUND: ${EVENT2_FOUND}")
 else()
     message(STATUS "EVENT2_FOUND: ${EVENT2_FOUND}")
 endif()
+
+message("     EVENT2_INCLUDES: ${EVENT2_INCLUDES}")
+message("     EVENT2_LIBRARIES: ${EVENT2_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

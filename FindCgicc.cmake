@@ -39,11 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT CGICC_FOUND AND Cgicc_FIND_REQUIRED)
-    message("     CGICC_INCLUDES: ${CGICC_INCLUDES}")
-    message("     CGICC_LIBRARIES: ${CGICC_LIBRARIES}")
-
     message(FATAL_ERROR "CGICC_FOUND: ${CGICC_FOUND}")
 else()
     message(STATUS "CGICC_FOUND: ${CGICC_FOUND}")
 endif()
+
+message("     CGICC_INCLUDES: ${CGICC_INCLUDES}")
+message("     CGICC_LIBRARIES: ${CGICC_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

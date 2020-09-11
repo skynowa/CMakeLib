@@ -39,11 +39,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT EXSLT_FOUND AND Exslt_FIND_REQUIRED)
-    message("     EXSLT_INCLUDES: ${EXSLT_INCLUDES}")
-    message("     EXSLT_LIBRARIES: ${EXSLT_LIBRARIES}")
-
     message(FATAL_ERROR "EXSLT_FOUND: ${EXSLT_FOUND}")
 else()
     message(STATUS "EXSLT_FOUND: ${EXSLT_FOUND}")
 endif()
+
+message("     EXSLT_INCLUDES: ${EXSLT_INCLUDES}")
+message("     EXSLT_LIBRARIES: ${EXSLT_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

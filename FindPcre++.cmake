@@ -45,11 +45,11 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT PCRE_PP_FOUND AND Pcre++_FIND_REQUIRED)
-    message("     PCRE_PP_INCLUDES: ${PCRE_PP_INCLUDES}")
-    message("     PCRE_PP_LIBRARIES: ${PCRE_PP_LIBRARIES}")
-
     message(FATAL_ERROR "PCRE_PP_FOUND: ${PCRE_PP_FOUND}")
 else()
     message(STATUS "PCRE_PP_FOUND: ${PCRE_PP_FOUND}")
 endif()
+
+message("     PCRE_PP_INCLUDES: ${PCRE_PP_INCLUDES}")
+message("     PCRE_PP_LIBRARIES: ${PCRE_PP_LIBRARIES}")
 #--------------------------------------------------------------------------------------------------

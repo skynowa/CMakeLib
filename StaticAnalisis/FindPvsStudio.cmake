@@ -75,14 +75,14 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT PVS_STUDIO_FOUND AND PvsStudio_FIND_REQUIRED)
-    message("     PVS_STUDIO_FILE_PATH:          ${PVS_STUDIO_FILE_PATH}")
-    message("     PVS_STUDIO_ANALYZER_FILE_PATH: ${PVS_STUDIO_ANALYZER_FILE_PATH}")
-    message("     PVS_STUDIO_PLOG_FILE_PATH:     ${PVS_STUDIO_PLOG_FILE_PATH}")
-    message("     PVS_STUDIO_LIC_FILE_PATH:      ${PVS_STUDIO_LIC_FILE_PATH}")
-    message("     PVS_STUDIO_CFG_FILE_PATH:      ${PVS_STUDIO_CFG_FILE_PATH}")
-
     message(FATAL_ERROR "PVS_STUDIO_FOUND: ${PVS_STUDIO_FOUND}")
 else()
     message(STATUS "PVS_STUDIO_FOUND: ${PVS_STUDIO_FOUND}")
 endif()
+
+message("     PVS_STUDIO_FILE_PATH:          ${PVS_STUDIO_FILE_PATH}")
+message("     PVS_STUDIO_ANALYZER_FILE_PATH: ${PVS_STUDIO_ANALYZER_FILE_PATH}")
+message("     PVS_STUDIO_PLOG_FILE_PATH:     ${PVS_STUDIO_PLOG_FILE_PATH}")
+message("     PVS_STUDIO_LIC_FILE_PATH:      ${PVS_STUDIO_LIC_FILE_PATH}")
+message("     PVS_STUDIO_CFG_FILE_PATH:      ${PVS_STUDIO_CFG_FILE_PATH}")
 #--------------------------------------------------------------------------------------------------

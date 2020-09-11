@@ -36,10 +36,10 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT CLANG_TIDY_FOUND AND ClangTidy_FIND_REQUIRED)
-    message("     CLANG_TIDY_FILE_PATH: ${CLANG_TIDY_FILE_PATH}")
-
     message(FATAL_ERROR "CLANG_TIDY_FOUND: ${CLANG_TIDY_FOUND}")
 else()
     message(STATUS "CLANG_TIDY_FOUND: ${CLANG_TIDY_FOUND}")
 endif()
+
+message("     CLANG_TIDY_FILE_PATH: ${CLANG_TIDY_FILE_PATH}")
 #--------------------------------------------------------------------------------------------------
