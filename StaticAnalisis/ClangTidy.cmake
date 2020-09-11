@@ -53,7 +53,7 @@ function(target_clang_tidy JOBS_NUM INCLUDES SOURCES)
                 -p=${COMPILE_COMMANDS_DIR}
                 ${SOURCES}
                 --
-                -std=c++11
+                -std=c++17
                 -I${INCLUDES}
                 # -j${JOBS_NUM}
         WORKING_DIRECTORY

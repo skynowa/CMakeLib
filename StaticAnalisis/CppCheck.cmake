@@ -31,7 +31,7 @@ function(target_cpp_check JOBS_NUM SOURCE_DIR)
                 --suppressions-list=${SUPPRESSIONS_FILE}
                 --inconclusive # ???
                 --template="[{severity}][{id}] {message} {callstack} \(On {file}:{line}\)"
-                --std=c++11 --std=posix
+                --std=c++17 --std=posix
                 --platform=native
                 --force
                 --quiet
