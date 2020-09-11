@@ -17,6 +17,7 @@ find_program(CPP_CHECK_FILE_PATH
         "/usr/bin"
         "/usr/local/bin"
         "/opt"
+        "/snap/cppcheck/current/usr/bin"
     DOC
         "A tool for static C/C++ code analysis")
 
@@ -27,6 +28,8 @@ find_program(CPP_CHECK_HTML_REPORT_FILE_PATH
         "/bin"
         "/usr/bin"
         "/usr/local/bin"
+        "/opt"
+        "/snap/cppcheck/current/usr/bin"
     DOC
         "Log converter")
 
