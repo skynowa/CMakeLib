@@ -1,18 +1,36 @@
 #--------------------------------------------------------------------------------------------------
 # \file  FindCMakeLib.cmake
-# \brief Find globaL variables
+# \brief Find CMakeLib include path
 #
-# CMAKE_DATA_DIR_DEFAULT - moduls default directory
+# CMAKE_LIB_FOUND    - true if system has library
+# CMAKE_LIB_INCLUDES - include directories
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
-find_package(GlobalVariables)
+find_path(CMAKE_LIB_INCLUDES
+    NAMES
+        "CMakeLib"
+    PATHS
+		"${CMAKE_ROOT}/Modules"
+    PATH_SUFFIXES
+        ""
+    DOC
+        "CMake library")
 
-set(CMAKE_MODULE_PATH "${CMAKE_DATA_DIR_DEFAULT}/CMakeLib;${CMAKE_MODULE_PATH}")
+if (NOT CMAKE_LIB_INCLUDES)
+    set(CMAKE_LIB_FOUND 0)
+    set(CMAKE_LIB_INCLUDES "")
+else()
+    set(CMAKE_LIB_FOUND 1)
+endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-message(STATUS "CMakeLib:")
-message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_DATA_DIR_DEFAULT};${CMAKE_MODULE_PATH}")
-message("")
+if (NOT CMAKE_LIB_FOUND AND CMakeLib_FIND_REQUIRED)
+	message("     CMAKE_LIB_INCLUDES: ${CMAKE_LIB_INCLUDES}")
+
+    message(FATAL_ERROR "CMAKE_LIB_FOUND: ${CMAKE_LIB_FOUND}")
+else()
+    message(STATUS "CMAKE_LIB_FOUND: ${CMAKE_LIB_FOUND}")
+endif()
 #--------------------------------------------------------------------------------------------------
