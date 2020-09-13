@@ -27,10 +27,17 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 if (NOT CMAKE_LIB_FOUND AND CMakeLib_FIND_REQUIRED)
-	message("     CMAKE_LIB_INCLUDES: ${CMAKE_LIB_INCLUDES}")
-
     message(FATAL_ERROR "CMAKE_LIB_FOUND: ${CMAKE_LIB_FOUND}")
 else()
     message(STATUS "CMAKE_LIB_FOUND: ${CMAKE_LIB_FOUND}")
 endif()
+
+message("     CMAKE_LIB_INCLUDES: ${CMAKE_LIB_INCLUDES}")
+#--------------------------------------------------------------------------------------------------
+# CMAKE_MODULE_PATH - set
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/Functions")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/StaticAnalisis")
+
+message("     CMAKE_MODULE_PATH:  ${CMAKE_MODULE_PATH}")
 #--------------------------------------------------------------------------------------------------
