@@ -29,7 +29,6 @@ install(
         PATTERN "Templates"          EXCLUDE
         PATTERN "install.sh"         EXCLUDE
         PATTERN "uninstall.sh"       EXCLUDE
-        PATTERN "RepoSync.sh"        EXCLUDE
         PATTERN "FindCMakeLib.cmake" EXCLUDE
         PATTERN "Uninstall.cmake"    EXCLUDE
         PATTERN "Uninstall.cmake"    EXCLUDE
@@ -45,7 +44,6 @@ install(
 
 #--------------------------------------------------------------------------------------------------
 # uninstall
-
 set(TARGET_DIR ${CMAKE_ROOT}/Modules/CMakeLib)
 message(STATUS "TARGET_DIR: ${TARGET_DIR}")
 
