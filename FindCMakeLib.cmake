@@ -34,10 +34,11 @@ if (NOT CMAKE_LIB_FOUND AND CMakeLib_FIND_REQUIRED)
 endif()
 #--------------------------------------------------------------------------------------------------
 # CMAKE_MODULE_PATH - set
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib")
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/Functions")
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/StaticAnalisis")
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/Qt5")
+list(APPEND CMAKE_MODULE_PATH
+    "${CMAKE_LIB_INCLUDES}/CMakeLib"
+    "${CMAKE_LIB_INCLUDES}/CMakeLib/Functions"
+    "${CMAKE_LIB_INCLUDES}/CMakeLib/StaticAnalisis"
+    "${CMAKE_LIB_INCLUDES}/CMakeLib/Qt5")
 
 message("   CMAKE_MODULE_PATH:  ${CMAKE_MODULE_PATH}")
 #--------------------------------------------------------------------------------------------------

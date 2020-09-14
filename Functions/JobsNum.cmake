@@ -14,5 +14,7 @@ function(jobs_num VALUE)
 	math(EXPR CPU_NUM "${CPU_NUM}*2")
 
 	set(${VALUE} "${CPU_NUM}" PARENT_SCOPE)
+
+	message(STATUS "jobs_num: ${VALUE}")
 endfunction()
 #--------------------------------------------------------------------------------------------------
