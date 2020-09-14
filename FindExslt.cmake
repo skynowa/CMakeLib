@@ -30,8 +30,6 @@ find_library(EXSLT_LIBRARIES
 
 if (NOT (EXSLT_INCLUDES AND EXSLT_LIBRARIES))
     set(EXSLT_FOUND 0)
-    set(EXSLT_INCLUDES "")
-    set(EXSLT_LIBRARIES "")
 else()
     set(EXSLT_FOUND 1)
     set(xHAVE_EXSLT 1)
