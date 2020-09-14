@@ -37,6 +37,7 @@ endif()
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/Functions")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/StaticAnalisis")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_LIB_INCLUDES}/CMakeLib/Qt5")
 
 message("   CMAKE_MODULE_PATH:  ${CMAKE_MODULE_PATH}")
 #--------------------------------------------------------------------------------------------------

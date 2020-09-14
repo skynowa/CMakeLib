@@ -4,8 +4,7 @@
 #
 # In project use CMake:
 #
-# # CMakeLib - CMAKE_MODULE_PATH
-# set(CMAKE_MODULE_PATH "${CMAKE_ROOT}/Modules/CMakeLib;${CMAKE_MODULE_PATH}")
+# find_package(CMakeLib  REQUIRED)
 #--------------------------------------------------------------------------------------------------
 
 
