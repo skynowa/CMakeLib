@@ -36,8 +36,6 @@ find_library(ICONV_LIBRARIES
 
 if (NOT (ICONV_INCLUDES))   # ICONV_LIBRARIES - unused
     set(ICONV_FOUND 0)
-    set(ICONV_INCLUDES "")
-    set(ICONV_LIBRARIES "")
 else()
     set(ICONV_FOUND 1)
     set(xHAVE_ICONV 1)

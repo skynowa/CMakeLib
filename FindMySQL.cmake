@@ -62,8 +62,6 @@ endif()
 
 if (NOT (MYSQL_INCLUDES AND MYSQL_LIBRARIES))
     set(cmMYSQL_FOUND 0)
-    set(MYSQL_INCLUDES "")
-    set(MYSQL_LIBRARIES "")
 else()
     set(cmMYSQL_FOUND 1)
 endif()

@@ -36,8 +36,6 @@ find_library(EVENT2_LIBRARIES
 
 if (NOT (EVENT2_INCLUDES AND EVENT2_LIBRARIES))
     set(EVENT2_FOUND 0)
-    set(EVENT2_INCLUDES "")
-    set(EVENT2_LIBRARIES "")
 else()
     set(EVENT2_FOUND 1)
     set(xHAVE_EVENT2 1) # config.h.in add: #cmakedefine xHAVE_EVENT2 1

@@ -28,8 +28,6 @@ else()
 
     if (NOT (cmGIT_REVISION_BRANCH AND cmGIT_REVISION_HASH))
         set(cmGIT_REVISION_FOUND 0)
-        set(cmGIT_REVISION_BRANCH "")
-        set(cmGIT_REVISION_HASH "")
     else()
         set(cmGIT_REVISION_FOUND 1)
     endif()

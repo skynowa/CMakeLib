@@ -36,8 +36,6 @@ find_library(PCRE_PP_LIBRARIES
 
 if (NOT (PCRE_PP_INCLUDES AND PCRE_PP_LIBRARIES))
     set(PCRE_PP_FOUND 0)
-    set(PCRE_PP_INCLUDES "")
-    set(PCRE_PP_LIBRARIES "")
 else()
     set(PCRE_PP_FOUND 1)
     set(xHAVE_PCRE_PP 1) # config.h.in add: #cmakedefine xHAVE_PCRE_PP 1

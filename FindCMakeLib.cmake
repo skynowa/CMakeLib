@@ -20,7 +20,6 @@ find_path(CMAKE_LIB_INCLUDES
 
 if (NOT CMAKE_LIB_INCLUDES)
     set(CMAKE_LIB_FOUND 0)
-    set(CMAKE_LIB_INCLUDES "")
 else()
     set(CMAKE_LIB_FOUND 1)
 endif()

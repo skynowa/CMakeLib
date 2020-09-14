@@ -30,8 +30,6 @@ find_library(CGICC_LIBRARIES
 
 if (NOT (CGICC_INCLUDES AND CGICC_LIBRARIES))
     set(CGICC_FOUND 0)
-    set(CGICC_INCLUDES "")
-    set(CGICC_LIBRARIES "")
 else()
     set(CGICC_FOUND 1)
     set(xHAVE_CGICC 1)

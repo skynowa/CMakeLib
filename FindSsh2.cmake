@@ -34,15 +34,13 @@ find_library(SSH2_LIBRARIES
 
 if (NOT (SSH2_INCLUDES AND SSH2_LIBRARIES))
     set(cmSSH2_FOUND 0)
-    set(SSH2_INCLUDES "")
-    set(SSH2_LIBRARIES "")
 else()
     set(cmSSH2_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmSSH2_FOUND: ${cmSSH2_FOUND}")
-message("   SSH2_INCLUDES: ${SSH2_INCLUDES}")
+message("   SSH2_INCLUDES:  ${SSH2_INCLUDES}")
 message("   SSH2_LIBRARIES: ${SSH2_LIBRARIES}")
 
 if (NOT cmSSH2_FOUND AND Ssh2_FIND_REQUIRED)

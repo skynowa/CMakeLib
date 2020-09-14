@@ -37,7 +37,7 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "XLib_FOUND: ${XLib_FOUND}")
-message("   XLib_INCLUDES: ${XLib_INCLUDES}")
+message("   XLib_INCLUDES:  ${XLib_INCLUDES}")
 message("   XLib_LIBRARIES: ${XLib_LIBRARIES}")
 
 if (NOT XLib_FOUND AND xLib_FIND_REQUIRED)

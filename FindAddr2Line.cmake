@@ -12,7 +12,6 @@ find_file(cmADDR2LINE_FILE_PATH "addr2line")
 
 if (cmADDR2LINE_FILE_PATH STREQUAL "cmADDR2LINE_FILE_PATH-NOTFOUND")
     set(cmADDR2LINE_FOUND 0)
-    set(cmADDR2LINE_FILE_PATH "")
 else()
     set(cmADDR2LINE_FOUND 1)
 endif()

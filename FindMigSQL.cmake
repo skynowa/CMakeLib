@@ -30,8 +30,6 @@ find_library(MIGSQL_LIBRARIES
 
 if (NOT (MIGSQL_INCLUDES AND MIGSQL_LIBRARIES))
     set(MIGSQL_FOUND 0)
-    set(MIGSQL_INCLUDES "")
-    set(MIGSQL_LIBRARIES "")
 else()
     set(MIGSQL_FOUND 1)
     set(xHAVE_MIGSQL 1)
