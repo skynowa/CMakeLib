@@ -15,6 +15,6 @@ function(jobs_num VALUE)
 
 	set(${VALUE} "${CPU_NUM}" PARENT_SCOPE)
 
-	message(STATUS "jobs_num: ${VALUE}")
+	message(STATUS "jobs_num: ${jobs_num}")
 endfunction()
 #--------------------------------------------------------------------------------------------------
