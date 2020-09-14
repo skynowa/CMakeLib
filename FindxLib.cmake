@@ -2,15 +2,15 @@
 # \file  FindxLib.cmake
 # \brief Find xLib includes and library
 #
-# XLib_FOUND     - true if system has library
-# XLib_INCLUDES  - include directories
-# XLib_LIBRARIES - libraries
+# XLIB_FOUND     - true if system has library
+# XLIB_INCLUDES  - include directories
+# XLIB_LIBRARIES - libraries
 # xHAVE_XLIB     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
-find_path(XLib_INCLUDES
+find_path(XLIB_INCLUDES
     NAMES
         "xLib.h"
     PATHS
@@ -19,7 +19,7 @@ find_path(XLib_INCLUDES
     PATH_SUFFIXES
         "xLib")
 
-find_library(XLib_LIBRARIES
+find_library(XLIB_LIBRARIES
     NAMES
         "xLib_static"
     PATHS
@@ -28,19 +28,19 @@ find_library(XLib_LIBRARIES
     PATH_SUFFIXES
         "xLib")
 
-if (NOT (XLib_INCLUDES AND XLib_LIBRARIES))
-    set(XLib_FOUND 0)
+if (NOT (XLIB_INCLUDES AND XLIB_LIBRARIES))
+    set(XLIB_FOUND 0)
 else()
-    set(XLib_FOUND 1)
+    set(XLIB_FOUND 1)
     set(xHAVE_XLib 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-message(STATUS "XLib_FOUND: ${XLib_FOUND}")
-message("   XLib_INCLUDES:  ${XLib_INCLUDES}")
-message("   XLib_LIBRARIES: ${XLib_LIBRARIES}")
+message(STATUS "XLIB_FOUND: ${XLIB_FOUND}")
+message("   XLIB_INCLUDES:  ${XLIB_INCLUDES}")
+message("   XLIB_LIBRARIES: ${XLIB_LIBRARIES}")
 
-if (NOT XLib_FOUND AND xLib_FIND_REQUIRED)
+if (NOT XLIB_FOUND AND xLib_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------
