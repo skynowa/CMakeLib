@@ -36,12 +36,11 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT cmGIT_REVISION_FOUND AND GitRevision_FIND_REQUIRED)
-    message(FATAL_ERROR "cmGIT_REVISION_FOUND: ${cmGIT_REVISION_FOUND}")
-else()
-    message(STATUS "cmGIT_REVISION_FOUND: ${cmGIT_REVISION_FOUND}")
-endif()
+message(STATUS "cmGIT_REVISION_FOUND: ${cmGIT_REVISION_FOUND}")
+message("   cmGIT_REVISION_BRANCH: ${cmGIT_REVISION_BRANCH}")
+message("   cmGIT_REVISION_HASH:   ${cmGIT_REVISION_HASH}")
 
-message("     cmGIT_REVISION_BRANCH: ${cmGIT_REVISION_BRANCH}")
-message("     cmGIT_REVISION_HASH: ${cmGIT_REVISION_HASH}")
+if (NOT cmGIT_REVISION_FOUND AND GitRevision_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

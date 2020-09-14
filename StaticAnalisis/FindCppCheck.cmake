@@ -42,12 +42,11 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT CPP_CHECK_FOUND AND CppCheck_FIND_REQUIRED)
-    message(FATAL_ERROR "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")
-else()
-    message(STATUS "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")
-endif()
+message(STATUS "CPP_CHECK_FOUND: ${CPP_CHECK_FOUND}")
+message("   CPP_CHECK_FILE_PATH:             ${CPP_CHECK_FILE_PATH}")
+message("   CPP_CHECK_HTML_REPORT_FILE_PATH: ${CPP_CHECK_HTML_REPORT_FILE_PATH}")
 
-message("     CPP_CHECK_FILE_PATH:             ${CPP_CHECK_FILE_PATH}")
-message("     CPP_CHECK_HTML_REPORT_FILE_PATH: ${CPP_CHECK_HTML_REPORT_FILE_PATH}")
+if (NOT CPP_CHECK_FOUND AND CppCheck_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

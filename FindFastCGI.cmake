@@ -49,12 +49,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT FASTCGI_FOUND AND FastCGI_FIND_REQUIRED)
-    message(FATAL_ERROR "FASTCGI_FOUND: ${FASTCGI_FOUND}")
-else()
-    message(STATUS "FASTCGI_FOUND: ${FASTCGI_FOUND}")
-endif()
+message(STATUS "FASTCGI_FOUND: ${FASTCGI_FOUND}")
+message("   FASTCGI_INCLUDES:  ${FASTCGI_INCLUDES}")
+message("   FASTCGI_LIBRARIES: ${FASTCGI_LIBRARIES}")
+message("   xHAVE_FASTCGI:     ${xHAVE_FASTCGI}")
 
-message("     FASTCGI_INCLUDES: ${FASTCGI_INCLUDES}")
-message("     FASTCGI_LIBRARIES: ${FASTCGI_LIBRARIES}")
+if (NOT FASTCGI_FOUND AND FastCGI_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

@@ -3,9 +3,9 @@
 # \brief Find libevent includes and library
 #
 # EVENT2_FOUND     - true if system has library
-# xHAVE_EVENT2     - true if found (source used)
 # EVENT2_INCLUDES  - include directories
 # EVENT2_LIBRARIES - libraries
+# xHAVE_EVENT2     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -44,12 +44,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT EVENT2_FOUND AND Event_FIND_REQUIRED)
-    message(FATAL_ERROR "EVENT2_FOUND: ${EVENT2_FOUND}")
-else()
-    message(STATUS "EVENT2_FOUND: ${EVENT2_FOUND}")
-endif()
-
-message("     EVENT2_INCLUDES: ${EVENT2_INCLUDES}")
+message(STATUS "EVENT2_FOUND: ${EVENT2_FOUND}")
+message("     EVENT2_INCLUDES:  ${EVENT2_INCLUDES}")
 message("     EVENT2_LIBRARIES: ${EVENT2_LIBRARIES}")
+message("     xHAVE_EVENT2:     ${xHAVE_EVENT2}")
+
+if (NOT EVENT2_FOUND AND Event_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

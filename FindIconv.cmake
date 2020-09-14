@@ -44,12 +44,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT ICONV_FOUND AND Iconv_FIND_REQUIRED)
-    message(FATAL_ERROR "ICONV_FOUND: ${ICONV_FOUND}")
-else()
-    message(STATUS "ICONV_FOUND: ${ICONV_FOUND}")
-endif()
+message(STATUS "ICONV_FOUND: ${ICONV_FOUND}")
+message("   ICONV_INCLUDES:  ${ICONV_INCLUDES}")
+message("   ICONV_LIBRARIES: ${ICONV_LIBRARIES}")
+message("   xHAVE_ICONV:     ${xHAVE_ICONV}")
 
-message("     ICONV_INCLUDES: ${ICONV_INCLUDES}")
-message("     ICONV_LIBRARIES: ${ICONV_LIBRARIES}")
+if (NOT ICONV_FOUND AND Iconv_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

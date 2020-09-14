@@ -11,5 +11,12 @@ Use CMakeLists.txt or `install.sh`
 ## Use in projects
 
 ```cmake
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_ROOT}/Modules/CMakeLib")
+# package
+find_package(CMakeLib  REQUIRED) # at 1-st
+
+# functions, targets
+include(Functions/JobsNum)
+include(StaticAnalisis/ClangTidy)
+include(StaticAnalisis/CppCheck)
+include(StaticAnalisis/PvsStudio)
 ```

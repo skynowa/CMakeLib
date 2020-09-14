@@ -36,12 +36,11 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT XLib_FOUND AND xLib_FIND_REQUIRED)
-    message("     XLib_INCLUDES: ${XLib_INCLUDES}")
-    message("     XLib_LIBRARIES: ${XLib_LIBRARIES}")
+message(STATUS "XLib_FOUND: ${XLib_FOUND}")
+message("   XLib_INCLUDES: ${XLib_INCLUDES}")
+message("   XLib_LIBRARIES: ${XLib_LIBRARIES}")
 
-    message(FATAL_ERROR "XLib_FOUND: ${XLib_FOUND}")
-else()
-    message(STATUS "XLib_FOUND: ${XLib_FOUND}")
+if (NOT XLib_FOUND AND xLib_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------

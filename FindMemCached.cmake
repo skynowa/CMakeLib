@@ -38,12 +38,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT MEMCACHED_FOUND AND MemCached_FIND_REQUIRED)
-    message(FATAL_ERROR "MEMCACHED_FOUND: ${MEMCACHED_FOUND}")
-else()
-    message(STATUS "MEMCACHED_FOUND: ${MEMCACHED_FOUND}")
-endif()
+message(STATUS "MEMCACHED_FOUND: ${MEMCACHED_FOUND}")
+message("   MEMCACHED_INCLUDES:  ${MEMCACHED_INCLUDES}")
+message("   MEMCACHED_LIBRARIES: ${MEMCACHED_LIBRARIES}")
+message("   xHAVE_MEMCACHED:     ${xHAVE_MEMCACHED}")
 
-message("     MEMCACHED_INCLUDES: ${MEMCACHED_INCLUDES}")
-message("     MEMCACHED_LIBRARIES: ${MEMCACHED_LIBRARIES}")
+if (NOT MEMCACHED_FOUND AND MemCached_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

@@ -84,13 +84,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT cmXCB_FOUND AND XCB_FIND_REQUIRED)
-    message(FATAL_ERROR "cmXCB_FOUND: ${cmXCB_FOUND}")
-else()
-    message(STATUS "cmXCB_FOUND: ${cmXCB_FOUND}")
-endif()
+message(STATUS "cmXCB_FOUND: ${cmXCB_FOUND}")
+message("   XCB_INCLUDE_DIR:       ${XCB_INCLUDE_DIR}")
+message("   XLIB_XCB_INCLUDE_PATH: ${XLIB_XCB_INCLUDE_PATH}")
+message("   XCB_LIBRARIES:         ${XCB_LIBRARIES}")
 
-message("     XCB_INCLUDE_DIR: ${XCB_INCLUDE_DIR}")
-message("     XLIB_XCB_INCLUDE_PATH: ${XLIB_XCB_INCLUDE_PATH}")
-message("     XCB_LIBRARIES: ${XCB_LIBRARIES}")
+if (NOT cmXCB_FOUND AND XCB_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

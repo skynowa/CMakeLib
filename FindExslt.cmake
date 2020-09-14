@@ -38,12 +38,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT EXSLT_FOUND AND Exslt_FIND_REQUIRED)
-    message(FATAL_ERROR "EXSLT_FOUND: ${EXSLT_FOUND}")
-else()
-    message(STATUS "EXSLT_FOUND: ${EXSLT_FOUND}")
-endif()
+message(STATUS "EXSLT_FOUND: ${EXSLT_FOUND}")
+message("   EXSLT_INCLUDES:  ${EXSLT_INCLUDES}")
+message("   EXSLT_LIBRARIES: ${EXSLT_LIBRARIES}")
+message("   xHAVE_EXSLT:     ${xHAVE_EXSLT}")
 
-message("     EXSLT_INCLUDES: ${EXSLT_INCLUDES}")
-message("     EXSLT_LIBRARIES: ${EXSLT_LIBRARIES}")
+if (NOT EXSLT_FOUND AND Exslt_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------

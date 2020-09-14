@@ -38,12 +38,12 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-if (NOT EXECINFO_FOUND AND ExecInfo_FIND_REQUIRED)
-    message(FATAL_ERROR "EXECINFO_FOUND: ${EXECINFO_FOUND}")
-else()
-    message(STATUS "EXECINFO_FOUND: ${EXECINFO_FOUND}")
-endif()
+message(STATUS "EXECINFO_FOUND: ${EXECINFO_FOUND}")
+message("   EXECINFO_INCLUDES:  ${EXECINFO_INCLUDES}")
+message("   EXECINFO_LIBRARIES: ${EXECINFO_LIBRARIES}")
+message("   xHAVE_EXECINFO:     ${xHAVE_EXECINFO}")
 
-message("     EXECINFO_INCLUDES: ${EXECINFO_INCLUDES}")
-message("     EXECINFO_LIBRARIES: ${EXECINFO_LIBRARIES}")
+if (NOT EXECINFO_FOUND AND ExecInfo_FIND_REQUIRED)
+    message(FATAL_ERROR "Not found")
+endif()
 #--------------------------------------------------------------------------------------------------
