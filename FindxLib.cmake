@@ -35,7 +35,7 @@ else()
     set(xHAVE_XLIB 1)
 endif()
 #--------------------------------------------------------------------------------------------------
-# libraries
+# TODO: libraries - gen from CMake
 set(XLIB_LIBRARIES ${XLIB_LIBRARIES}
     ssl
     crypto
