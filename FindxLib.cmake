@@ -37,15 +37,14 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # libraries
 set(XLIB_LIBRARIES ${XLIB_LIBRARIES}
-    /usr/lib/x86_64-linux-gnu/libssl.so
-    /usr/lib/x86_64-linux-gnu/libcrypto.so
-    /usr/lib/x86_64-linux-gnu/libmysqlclient.so
-    /usr/lib/x86_64-linux-gnu/libssh2.so
-    /usr/lib/x86_64-linux-gnu/libcurl.so
-    /usr/lib/x86_64-linux-gnu/libxml2.so
-    /usr/lib/x86_64-linux-gnu/libxcb.so
-    /usr/lib/x86_64-linux-gnu/libX11-xcb.so
-    -lpthread
+    ssl
+    crypto
+    mysqlclient
+    ssh2
+    curl
+    xml2
+    xcb
+    X11-xcb
     dl
     pthread
     rt
