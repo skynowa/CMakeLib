@@ -31,8 +31,7 @@ install(
         PATTERN "FindCMakeLib.cmake" EXCLUDE
         PATTERN "Uninstall.cmake"    EXCLUDE
         PATTERN "Uninstall.cmake"    EXCLUDE
-        PATTERN "Readme.md"          EXCLUDE
-)
+        PATTERN "Readme.md"          EXCLUDE)
 
 # files
 install(
