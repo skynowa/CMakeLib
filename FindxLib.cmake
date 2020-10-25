@@ -5,7 +5,6 @@
 # XLIB_FOUND     - true if system has library
 # XLIB_INCLUDES  - include directories
 # XLIB_LIBRARIES - libraries
-# xHAVE_XLIB     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -32,7 +31,6 @@ if (NOT (XLIB_INCLUDES AND XLIB_LIBRARIES))
     set(XLIB_FOUND 0)
 else()
     set(XLIB_FOUND 1)
-    set(xHAVE_XLIB 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
@@ -56,7 +54,6 @@ set(XLIB_LIBRARIES ${XLIB_LIBRARIES}
 message(STATUS "XLIB_FOUND: ${XLIB_FOUND}")
 message("   XLIB_INCLUDES:  ${XLIB_INCLUDES}")
 message("   XLIB_LIBRARIES: ${XLIB_LIBRARIES}")
-message("   xHAVE_XLIB:     ${xHAVE_XLIB}")
 
 if (NOT XLIB_FOUND AND xLib_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")

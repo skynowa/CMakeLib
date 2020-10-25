@@ -5,7 +5,6 @@
 # EVENT2_FOUND     - true if system has library
 # EVENT2_INCLUDES  - include directories
 # EVENT2_LIBRARIES - libraries
-# xHAVE_EVENT2     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -38,14 +37,12 @@ if (NOT (EVENT2_INCLUDES AND EVENT2_LIBRARIES))
     set(EVENT2_FOUND 0)
 else()
     set(EVENT2_FOUND 1)
-    set(xHAVE_EVENT2 1) # config.h.in add: #cmakedefine xHAVE_EVENT2 1
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "EVENT2_FOUND: ${EVENT2_FOUND}")
 message("     EVENT2_INCLUDES:  ${EVENT2_INCLUDES}")
 message("     EVENT2_LIBRARIES: ${EVENT2_LIBRARIES}")
-message("     xHAVE_EVENT2:     ${xHAVE_EVENT2}")
 
 if (NOT EVENT2_FOUND AND Event_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")

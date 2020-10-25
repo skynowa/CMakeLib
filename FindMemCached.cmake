@@ -5,7 +5,6 @@
 # MEMCACHED_FOUND     - true if system has library
 # MEMCACHED_INCLUDES  - include directories
 # MEMCACHED_LIBRARIES - libraries
-# xHAVE_MEMCACHED     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -32,14 +31,12 @@ if (NOT (MEMCACHED_INCLUDES AND MEMCACHED_LIBRARIES))
     set(MEMCACHED_FOUND 0)
 else()
     set(MEMCACHED_FOUND 1)
-    set(xHAVE_MEMCACHED 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "MEMCACHED_FOUND: ${MEMCACHED_FOUND}")
 message("   MEMCACHED_INCLUDES:  ${MEMCACHED_INCLUDES}")
 message("   MEMCACHED_LIBRARIES: ${MEMCACHED_LIBRARIES}")
-message("   xHAVE_MEMCACHED:     ${xHAVE_MEMCACHED}")
 
 if (NOT MEMCACHED_FOUND AND MemCached_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")

@@ -5,7 +5,6 @@
 # FASTCGI_FOUND     - true if system has library
 # FASTCGI_INCLUDES  - include directories
 # FASTCGI_LIBRARIES - libraries
-# xHAVE_FASTCGI     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -43,14 +42,12 @@ else()
     set(FASTCGI_LIBRARIES ${FASTCGI_LIBRARIES} ${FASTCGIPP_LIBRARIES})
 
     set(FASTCGI_FOUND 1)
-    set(xHAVE_FASTCGI 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "FASTCGI_FOUND: ${FASTCGI_FOUND}")
 message("   FASTCGI_INCLUDES:  ${FASTCGI_INCLUDES}")
 message("   FASTCGI_LIBRARIES: ${FASTCGI_LIBRARIES}")
-message("   xHAVE_FASTCGI:     ${xHAVE_FASTCGI}")
 
 if (NOT FASTCGI_FOUND AND FastCGI_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")

@@ -5,7 +5,6 @@
 # PCRE_PP_FOUND     - true if system has library
 # PCRE_PP_INCLUDES  - include directories
 # PCRE_PP_LIBRARIES - libraries
-# xHAVE_PCRE_PP     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -38,14 +37,12 @@ if (NOT (PCRE_PP_INCLUDES AND PCRE_PP_LIBRARIES))
     set(PCRE_PP_FOUND 0)
 else()
     set(PCRE_PP_FOUND 1)
-    set(xHAVE_PCRE_PP 1) # config.h.in add: #cmakedefine xHAVE_PCRE_PP 1
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "PCRE_PP_FOUND: ${PCRE_PP_FOUND}")
 message("   PCRE_PP_INCLUDES:  ${PCRE_PP_INCLUDES}")
 message("   PCRE_PP_LIBRARIES: ${PCRE_PP_LIBRARIES}")
-message("   xHAVE_PCRE_PP:     ${xHAVE_PCRE_PP}")
 
 if (NOT PCRE_PP_FOUND AND Pcre++_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")

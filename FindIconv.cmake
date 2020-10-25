@@ -5,7 +5,6 @@
 # ICONV_FOUND     - true if system has library
 # ICONV_INCLUDES  - include directories
 # ICONV_LIBRARIES - libraries
-# xHAVE_ICONV     - true if found (source used)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -38,14 +37,12 @@ if (NOT (ICONV_INCLUDES))   # ICONV_LIBRARIES - unused
     set(ICONV_FOUND 0)
 else()
     set(ICONV_FOUND 1)
-    set(xHAVE_ICONV 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "ICONV_FOUND: ${ICONV_FOUND}")
 message("   ICONV_INCLUDES:  ${ICONV_INCLUDES}")
 message("   ICONV_LIBRARIES: ${ICONV_LIBRARIES}")
-message("   xHAVE_ICONV:     ${xHAVE_ICONV}")
 
 if (NOT ICONV_FOUND AND Iconv_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
