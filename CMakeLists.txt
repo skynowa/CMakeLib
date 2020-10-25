@@ -4,7 +4,7 @@
 #
 # In project use CMake:
 #
-# find_package(CMakeLib  REQUIRED)
+# find_package(CMakeLib REQUIRED)
 #--------------------------------------------------------------------------------------------------
 
 
@@ -28,10 +28,7 @@ install(
         PATTERN "Templates"          EXCLUDE
         PATTERN "install.sh"         EXCLUDE
         PATTERN "uninstall.sh"       EXCLUDE
-        PATTERN "FindCMakeLib.cmake" EXCLUDE
-        PATTERN "Uninstall.cmake"    EXCLUDE
-        PATTERN "Uninstall.cmake"    EXCLUDE
-        PATTERN "Readme.md"          EXCLUDE)
+        PATTERN "Uninstall.cmake"    EXCLUDE)
 
 # files
 install(
@@ -39,7 +36,6 @@ install(
         FindCMakeLib.cmake
     DESTINATION
         ${CMAKE_ROOT}/Modules)
-
 #--------------------------------------------------------------------------------------------------
 # uninstall
 set(TARGET_DIR ${CMAKE_ROOT}/Modules/CMakeLib)
