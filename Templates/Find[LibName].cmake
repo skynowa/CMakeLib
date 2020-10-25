@@ -5,7 +5,7 @@
 [RealLibName]       - real lib name
 [LIB_H]             - lib header file
 [LIB_PATH_SUFFIXES] - lib path suffix
-[Comments]           - comments
+[Comments]          - comments
 ### DELETE end ###
 
 
@@ -14,7 +14,6 @@
 # \brief Find [RealLibName] includes and library
 #
 # [LIB_NAME]_FOUND     - true if system has library
-# xHAVE_[LIB_NAME]     - true if found (source used)
 # [LIB_NAME]_INCLUDES  - include directories
 # [LIB_NAME]_LIBRARIES - libraries
 #--------------------------------------------------------------------------------------------------
@@ -51,7 +50,6 @@ if (NOT ([LIB_NAME]_INCLUDES AND [LIB_NAME]_LIBRARIES))
     set([LIB_NAME]_LIBRARIES "")
 else()
     set([LIB_NAME]_FOUND 1)
-    set(xHAVE_[LIB_NAME] 1) # config.h.in add: #cmakedefine xHAVE_[LIB_NAME] 1
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace

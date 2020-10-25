@@ -1,7 +1,7 @@
 ### DELETE begin ###
 [FUNCTION_NAME] - function name
 [Comments]      - comments
-[PARAM_NAME]    = param
+[PARAM_NAME]    - param
 ### DELETE end ###
 
 
