@@ -2,15 +2,15 @@
 # \file  FindMySQL.cmake
 # \brief Find the native MySQL includes and library
 #
-# cmMYSQL_FOUND   - true if MySQL found
-# MYSQL_INCLUDES  - where to find mysql.h, etc
-# MYSQL_LIBRARIES - list of libraries when using MySQL
+# cmMYSQL_FOUND     - true if MySQL found
+# cmMYSQL_INCLUDES  - where to find mysql.h, etc
+# cmMYSQL_LIBRARIES - list of libraries when using MySQL
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
 if (WIN32)
-    find_path(MYSQL_INCLUDES
+    find_path(cmMYSQL_INCLUDES
         NAMES
             "mysql.h"
         PATHS
@@ -20,7 +20,7 @@ if (WIN32)
         PATH_SUFFIXES
             "mysql")
 
-    find_library(MYSQL_LIBRARIES
+    find_library(cmMYSQL_LIBRARIES
         NAMES
             "mysqlclient"
             "mysqlclient_r"
@@ -32,7 +32,7 @@ if (WIN32)
             "mysql")
 
 else()
-    find_path(MYSQL_INCLUDES
+    find_path(cmMYSQL_INCLUDES
         NAMES
             "mysql.h"
         PATHS
@@ -42,7 +42,7 @@ else()
         PATH_SUFFIXES
             "mysql")
 
-    find_library(MYSQL_LIBRARIES
+    find_library(cmMYSQL_LIBRARIES
         NAMES
             "mysqlclient"
             "mysqlclient_r"
@@ -60,7 +60,7 @@ else()
             "mysql")
 endif()
 
-if (NOT (MYSQL_INCLUDES AND MYSQL_LIBRARIES))
+if (NOT cmMYSQL_INCLUDES AND cmMYSQL_LIBRARIES)
     set(cmMYSQL_FOUND 0)
 else()
     set(cmMYSQL_FOUND 1)
@@ -68,10 +68,10 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmMYSQL_FOUND: ${cmMYSQL_FOUND}")
-message("   MYSQL_INCLUDES:  ${MYSQL_INCLUDES}")
-message("   MYSQL_LIBRARIES: ${MYSQL_LIBRARIES}")
+message("   cmMYSQL_INCLUDES:  ${cmMYSQL_INCLUDES}")
+message("   cmMYSQL_LIBRARIES: ${cmMYSQL_LIBRARIES}")
 
-if (NOT cmMYSQL_FOUND AND MySQL_FIND_REQUIRED)
+if (NOT cmMYSQL_FOUND AND cmMySQL_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------

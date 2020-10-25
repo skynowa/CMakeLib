@@ -2,14 +2,14 @@
 # \file  FindIconv.cmake
 # \brief Find Iconv includes and library
 #
-# ICONV_FOUND     - true if system has library
-# ICONV_INCLUDES  - include directories
-# ICONV_LIBRARIES - libraries
+# cmICONV_FOUND     - true if system has library
+# cmICONV_INCLUDES  - include directories
+# cmICONV_LIBRARIES - libraries
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
-find_path(ICONV_INCLUDES
+find_path(cmICONV_INCLUDES
     NAMES
         "iconv.h"
     PATHS
@@ -20,7 +20,7 @@ find_path(ICONV_INCLUDES
     DOC
         "Convert between different character encodings")
 
-find_library(ICONV_LIBRARIES
+find_library(cmICONV_LIBRARIES
     NAMES
         "iconv"
     PATHS
@@ -33,18 +33,18 @@ find_library(ICONV_LIBRARIES
     PATH_SUFFIXES
         "iconv")
 
-if (NOT (ICONV_INCLUDES))   # ICONV_LIBRARIES - unused
-    set(ICONV_FOUND 0)
+if (NOT cmICONV_INCLUDES)   # cmICONV_LIBRARIES - unused
+    set(cmICONV_FOUND 0)
 else()
-    set(ICONV_FOUND 1)
+    set(cmICONV_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-message(STATUS "ICONV_FOUND: ${ICONV_FOUND}")
-message("   ICONV_INCLUDES:  ${ICONV_INCLUDES}")
-message("   ICONV_LIBRARIES: ${ICONV_LIBRARIES}")
+message(STATUS "cmICONV_FOUND: ${cmICONV_FOUND}")
+message("   cmICONV_INCLUDES:  ${cmICONV_INCLUDES}")
+message("   cmICONV_LIBRARIES: ${cmICONV_LIBRARIES}")
 
-if (NOT ICONV_FOUND AND Iconv_FIND_REQUIRED)
+if (NOT cmICONV_FOUND AND Iconv_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------

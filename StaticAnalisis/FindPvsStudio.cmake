@@ -2,16 +2,16 @@
 # \file  FindPvsStudio.cmake
 # \brief Find pvs-studio-analyzer
 #
-# PVS_STUDIO_FOUND              - true if found
-# PVS_STUDIO_FILE_PATH          - where to find program
-# PVS_STUDIO_ANALYZER_FILE_PATH - where to find program
-# PVS_STUDIO_LIC_FILE_PATH      - where to find license file
-# PVS_STUDIO_CFG_FILE_PATH      - where to find configuration file
+# cmPVS_STUDIO_FOUND              - true if found
+# cmPVS_STUDIO_FILE_PATH          - where to find program
+# cmPVS_STUDIO_ANALYZER_FILE_PATH - where to find program
+# cmPVS_STUDIO_LIC_FILE_PATH      - where to find license file
+# cmPVS_STUDIO_CFG_FILE_PATH      - where to find configuration file
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
-find_program(PVS_STUDIO_FILE_PATH
+find_program(cmPVS_STUDIO_FILE_PATH
     NAMES
         "pvs-studio"
         "pvs-studio-analyzer"
@@ -25,7 +25,7 @@ find_program(PVS_STUDIO_FILE_PATH
     DOC
         "Static code analyzer for C, C++")
 
-find_program(PVS_STUDIO_ANALYZER_FILE_PATH
+find_program(cmPVS_STUDIO_ANALYZER_FILE_PATH
     NAMES
         "pvs-studio-analyzer"
     PATHS
@@ -35,7 +35,7 @@ find_program(PVS_STUDIO_ANALYZER_FILE_PATH
     DOC
         "Static code analyzer for C, C++")
 
-find_program(PVS_STUDIO_PLOG_FILE_PATH
+find_program(cmPVS_STUDIO_PLOG_FILE_PATH
     NAMES
         "plog-converter"
     PATHS
@@ -45,7 +45,7 @@ find_program(PVS_STUDIO_PLOG_FILE_PATH
     DOC
         "Log converter")
 
-find_file(PVS_STUDIO_LIC_FILE_PATH
+find_file(cmPVS_STUDIO_LIC_FILE_PATH
     NAMES
         "PVS-Studio.lic"
     PATHS
@@ -53,7 +53,7 @@ find_file(PVS_STUDIO_LIC_FILE_PATH
     DOC
         "License file")
 
-find_file(PVS_STUDIO_CFG_FILE_PATH
+find_file(cmPVS_STUDIO_CFG_FILE_PATH
     NAMES
         "PVS-Studio.cfg"
     PATHS
@@ -62,26 +62,26 @@ find_file(PVS_STUDIO_CFG_FILE_PATH
         "Configuration file")
 
 
-if (PVS_STUDIO_FILE_PATH          STREQUAL "PVS_STUDIO_FILE_PATH-NOTFOUND" OR
-    PVS_STUDIO_ANALYZER_FILE_PATH STREQUAL "PVS_STUDIO_ANALYZER_FILE_PATH-NOTFOUND" OR
-    PVS_STUDIO_PLOG_FILE_PATH     STREQUAL "PVS_STUDIO_PLOG_FILE_PATH-NOTFOUND" OR
-    PVS_STUDIO_LIC_FILE_PATH      STREQUAL "PVS_STUDIO_LIC_FILE_PATH-NOTFOUND" OR
-    PVS_STUDIO_CFG_FILE_PATH      STREQUAL "PVS_STUDIO_CFG_FILE_PATH-NOTFOUND"
+if (cmPVS_STUDIO_FILE_PATH          STREQUAL "cmPVS_STUDIO_FILE_PATH-NOTFOUND" OR
+    cmPVS_STUDIO_ANALYZER_FILE_PATH STREQUAL "cmPVS_STUDIO_ANALYZER_FILE_PATH-NOTFOUND" OR
+    cmPVS_STUDIO_PLOG_FILE_PATH     STREQUAL "cmPVS_STUDIO_PLOG_FILE_PATH-NOTFOUND" OR
+    cmPVS_STUDIO_LIC_FILE_PATH      STREQUAL "cmPVS_STUDIO_LIC_FILE_PATH-NOTFOUND" OR
+    cmPVS_STUDIO_CFG_FILE_PATH      STREQUAL "cmPVS_STUDIO_CFG_FILE_PATH-NOTFOUND"
 )
-    set(PVS_STUDIO_FOUND 0)
+    set(cmPVS_STUDIO_FOUND 0)
 else()
-    set(PVS_STUDIO_FOUND 1)
+    set(cmPVS_STUDIO_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-message(STATUS "PVS_STUDIO_FOUND: ${PVS_STUDIO_FOUND}")
-message("   PVS_STUDIO_FILE_PATH:          ${PVS_STUDIO_FILE_PATH}")
-message("   PVS_STUDIO_ANALYZER_FILE_PATH: ${PVS_STUDIO_ANALYZER_FILE_PATH}")
-message("   PVS_STUDIO_PLOG_FILE_PATH:     ${PVS_STUDIO_PLOG_FILE_PATH}")
-message("   PVS_STUDIO_LIC_FILE_PATH:      ${PVS_STUDIO_LIC_FILE_PATH}")
-message("   PVS_STUDIO_CFG_FILE_PATH:      ${PVS_STUDIO_CFG_FILE_PATH}")
+message(STATUS "cmPVS_STUDIO_FOUND: ${cmPVS_STUDIO_FOUND}")
+message("   cmPVS_STUDIO_FILE_PATH:          ${cmPVS_STUDIO_FILE_PATH}")
+message("   cmPVS_STUDIO_ANALYZER_FILE_PATH: ${cmPVS_STUDIO_ANALYZER_FILE_PATH}")
+message("   cmPVS_STUDIO_PLOG_FILE_PATH:     ${cmPVS_STUDIO_PLOG_FILE_PATH}")
+message("   cmPVS_STUDIO_LIC_FILE_PATH:      ${cmPVS_STUDIO_LIC_FILE_PATH}")
+message("   cmPVS_STUDIO_CFG_FILE_PATH:      ${cmPVS_STUDIO_CFG_FILE_PATH}")
 
-if (NOT PVS_STUDIO_FOUND AND PvsStudio_FIND_REQUIRED)
+if (NOT cmPVS_STUDIO_FOUND AND PvsStudio_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------

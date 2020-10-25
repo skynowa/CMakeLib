@@ -2,14 +2,14 @@
 # \file  FindxLib.cmake
 # \brief Find xLib includes and library
 #
-# XLIB_FOUND     - true if system has library
-# XLIB_INCLUDES  - include directories
-# XLIB_LIBRARIES - libraries
+# cmXLIB_FOUND     - true if system has library
+# cmXLIB_INCLUDES  - include directories
+# cmXLIB_LIBRARIES - libraries
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
-find_path(XLIB_INCLUDES
+find_path(cmXLIB_INCLUDES
     NAMES
         "xLib.h"
     PATHS
@@ -18,7 +18,7 @@ find_path(XLIB_INCLUDES
     PATH_SUFFIXES
         "xLib")
 
-find_library(XLIB_LIBRARIES
+find_library(cmXLIB_LIBRARIES
     NAMES
         "xLib_static"
     PATHS
@@ -27,14 +27,14 @@ find_library(XLIB_LIBRARIES
     PATH_SUFFIXES
         "xLib")
 
-if (NOT (XLIB_INCLUDES AND XLIB_LIBRARIES))
-    set(XLIB_FOUND 0)
+if (NOT cmXLIB_INCLUDES AND cmXLIB_LIBRARIES)
+    set(cmXLIB_FOUND 0)
 else()
-    set(XLIB_FOUND 1)
+    set(cmXLIB_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
-set(XLIB_LIBRARIES ${XLIB_LIBRARIES}
+set(cmXLIB_LIBRARIES ${cmXLIB_LIBRARIES}
     ssl
     crypto
     mysqlclient
@@ -51,11 +51,11 @@ set(XLIB_LIBRARIES ${XLIB_LIBRARIES}
     xLib_static)
 #--------------------------------------------------------------------------------------------------
 # trace
-message(STATUS "XLIB_FOUND: ${XLIB_FOUND}")
-message("   XLIB_INCLUDES:  ${XLIB_INCLUDES}")
-message("   XLIB_LIBRARIES: ${XLIB_LIBRARIES}")
+message(STATUS "cmXLIB_FOUND: ${cmXLIB_FOUND}")
+message("   cmXLIB_INCLUDES:  ${cmXLIB_INCLUDES}")
+message("   cmXLIB_LIBRARIES: ${cmXLIB_LIBRARIES}")
 
-if (NOT XLIB_FOUND AND xLib_FIND_REQUIRED)
+if (NOT cmXLIB_FOUND AND xLib_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------

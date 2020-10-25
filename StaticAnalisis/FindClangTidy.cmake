@@ -2,13 +2,13 @@
 # \file  FindClangTidy.cmake
 # \brief Find clang-tidy
 #
-# CLANG_TIDY_FOUND     - true if found
-# CLANG_TIDY_FILE_PATH - clang-tidy path
+# cmCLANG_TIDY_FOUND     - true if found
+# cmCLANG_TIDY_FILE_PATH - clang-tidy path
 #--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
-find_program(CLANG_TIDY_FILE_PATH
+find_program(cmCLANG_TIDY_FILE_PATH
     NAMES
         "clang-tidy"
         "clang-tidy-11.0"
@@ -29,17 +29,17 @@ find_program(CLANG_TIDY_FILE_PATH
     DOC
         "clang-based C++ “linter” tool")
 
-if (CLANG_TIDY_FILE_PATH STREQUAL "CLANG_TIDY_FILE_PATH-NOTFOUND")
-    set(CLANG_TIDY_FOUND 0)
+if (cmCLANG_TIDY_FILE_PATH STREQUAL "cmCLANG_TIDY_FILE_PATH-NOTFOUND")
+    set(cmCLANG_TIDY_FOUND 0)
 else()
-    set(CLANG_TIDY_FOUND 1)
+    set(cmCLANG_TIDY_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace
-message(STATUS "CLANG_TIDY_FOUND: ${CLANG_TIDY_FOUND}")
-message("   CLANG_TIDY_FILE_PATH: ${CLANG_TIDY_FILE_PATH}")
+message(STATUS "cmCLANG_TIDY_FOUND: ${cmCLANG_TIDY_FOUND}")
+message("   cmCLANG_TIDY_FILE_PATH: ${cmCLANG_TIDY_FILE_PATH}")
 
-if (NOT CLANG_TIDY_FOUND AND ClangTidy_FIND_REQUIRED)
+if (NOT cmCLANG_TIDY_FOUND AND ClangTidy_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
 endif()
 #--------------------------------------------------------------------------------------------------

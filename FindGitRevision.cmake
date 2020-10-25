@@ -10,9 +10,9 @@
 
 #--------------------------------------------------------------------------------------------------
 if (NOT EXISTS "${CMAKE_SOURCE_DIR}/.git")
-    set(cmGIT_REVISION_FOUND 0)
+    set(cmGIT_REVISION_FOUND  0)
     set(cmGIT_REVISION_BRANCH "")
-    set(cmGIT_REVISION_HASH "")
+    set(cmGIT_REVISION_HASH   "")
 else()
     execute_process(
         COMMAND git rev-parse --abbrev-ref HEAD
@@ -26,7 +26,7 @@ else()
         OUTPUT_VARIABLE cmGIT_REVISION_HASH
         OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-    if (NOT (cmGIT_REVISION_BRANCH AND cmGIT_REVISION_HASH))
+    if (NOT cmGIT_REVISION_BRANCH AND cmGIT_REVISION_HASH)
         set(cmGIT_REVISION_FOUND 0)
     else()
         set(cmGIT_REVISION_FOUND 1)
