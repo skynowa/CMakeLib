@@ -28,7 +28,8 @@ find_library(EXECINFO_LIBRARIES
     PATH_SUFFIXES
         "execinfo")
 
-if (NOT (EXECINFO_INCLUDES AND EXECINFO_LIBRARIES))
+# includes or libs - OK
+if (NOT (EXECINFO_INCLUDES OR EXECINFO_LIBRARIES))
     set(EXECINFO_FOUND 0)
 else()
     set(EXECINFO_FOUND 1)
