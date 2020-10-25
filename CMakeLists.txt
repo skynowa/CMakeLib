@@ -22,13 +22,14 @@ install(
         ${CMAKE_ROOT}/Modules
     FILES_MATCHING
         PATTERN "*"
-        PATTERN ".git"            EXCLUDE
-        PATTERN ".gitignore"      EXCLUDE
-        PATTERN "CMakeLists.txt"  EXCLUDE
-        PATTERN "Templates"       EXCLUDE
-        PATTERN "install.sh"      EXCLUDE
-        PATTERN "uninstall.sh"    EXCLUDE
-        PATTERN "Uninstall.cmake" EXCLUDE)
+        PATTERN ".git"               EXCLUDE
+        PATTERN ".gitignore"         EXCLUDE
+        PATTERN "CMakeLists.txt"     EXCLUDE
+        PATTERN "FindCMakeLib.cmake" EXCLUDE
+        PATTERN "Templates"          EXCLUDE
+        PATTERN "install.sh"         EXCLUDE
+        PATTERN "uninstall.sh"       EXCLUDE
+        PATTERN "Uninstall.cmake"    EXCLUDE)
 
 # files
 install(
