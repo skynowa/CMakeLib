@@ -6,7 +6,7 @@
 
 #--------------------------------------------------------------------------------------------------.
 set(_QT5_MODULES Core Gui Widgets Sql Network Xml PrintSupport Concurrent)
-# TODO: Multimedia (as Config.h:OPTION_QMEDIA_PLAYER)
+# TODO: Multimedia (as Config.h:OPTION_QTMULTIMEDIA)
 
 if (OS_ANDROID)
     set(_QT5_MODULES ${_QT5_MODULES} Qml Quick)
@@ -14,6 +14,10 @@ endif()
 
 foreach(COMPONENT ${_QT5_MODULES})
    find_package(Qt5${COMPONENT} QUIET REQUIRED)
+
+   if ("${COMPONENT}" STREQUAL "Widgets")
+       message("Qt5Widgets version: ${Qt5Widgets_VERSION_STRING}")
+   endif()
 
    include_directories(${Qt5${COMPONENT}_INCLUDE_DIRS})
    add_definitions(${Qt5${COMPONENT}_DEFINITIONS})
