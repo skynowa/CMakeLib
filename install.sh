@@ -15,4 +15,5 @@ echo "Build/Install ..."
 mkdir -p $DIR_BUILD
 cd $DIR_BUILD
 
-sudo cmake --build . --target install
+# sudo
+cmake --build . --target install
