@@ -8,7 +8,7 @@
 # vars
 PROJECT_NAME="CMakeLib"
 DIR_PROJECT="$PWD"
-DIR_BUILD='../${PROJECT_NAME}_build'
+DIR_BUILD="../${PROJECT_NAME}_build"
 
 # Build
 echo "Build/Install ..."
