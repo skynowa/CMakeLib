@@ -15,7 +15,7 @@ if (WIN32)
             "mysql.h"
         PATHS
             "$ENV{PROGRAMFILES}/MySQL/*/include"
-            "$ENV{PROGRAMFILES(x86)}/MySQL/*/include"
+            "$ENV{PROGRAMFILES\(x86\)}/MySQL/*/include"
             "$ENV{SYSTEMDRIVE}/MySQL/*/include"
         PATH_SUFFIXES
             "mysql")
@@ -26,7 +26,7 @@ if (WIN32)
             "mysqlclient_r"
         PATHS
             "$ENV{PROGRAMFILES}/MySQL/*/lib"
-            "$ENV{PROGRAMFILES(x86)}/MySQL/*/lib"
+            "$ENV{PROGRAMFILES\(x86\)}/MySQL/*/lib"
             "$ENV{SYSTEMDRIVE}/MySQL/*/lib"
         PATH_SUFFIXES
             "mysql")
