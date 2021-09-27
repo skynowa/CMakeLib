@@ -10,6 +10,7 @@ SUDO="sudo"
 
 echo "OSTYPE: ${OSTYPE}"
 
+# TODO: MSVC - check
 if [[ "${OSTYPE}" == "msys" ]]; then
 	SUDO=""
 fi
