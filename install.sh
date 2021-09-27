@@ -4,6 +4,15 @@
 # \brief build project
 #
 
+set -ex
+
+SUDO="sudo"
+
+echo "OSTYPE: ${OSTYPE}"
+
+if [[ "${OSTYPE}" == "win32"* ]]; then
+	SUDO=""
+fi
 
 # vars
 PROJECT_NAME="CMakeLib"
@@ -18,4 +27,4 @@ cd $DIR_BUILD
 
 # sudo
 cmake $DIR_PROJECT
-cmake --build . --target install
+${SUDO} cmake --build . --target install
