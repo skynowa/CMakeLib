@@ -10,7 +10,7 @@ SUDO="sudo"
 
 echo "OSTYPE: ${OSTYPE}"
 
-if [[ "${OSTYPE}" == "win"* ]]; then
+if [[ "${OSTYPE}" == "msys" ]]; then
 	SUDO=""
 fi
 
