@@ -11,7 +11,9 @@ SUDO="sudo"
 echo "OSTYPE: ${OSTYPE}"
 
 # TODO: MSVC - check
-if [[ "${OSTYPE}" == "msys" ]]; then
+if   [[ "${OSTYPE}" == "msys" ]]; then
+	SUDO=""
+elif [[ "${OSTYPE}" == "win"* ]]; then
 	SUDO=""
 fi
 
