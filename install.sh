@@ -16,11 +16,6 @@ if   [[ "${OSTYPE}" == "win"* ]]; then
 	SUDO=""
 elif [[ "${OSTYPE}" == "msys"* ]]; then
 	SUDO=""
-else
-	SUDO=""
-
-	echo "Unknown OSTYPE: ${OSTYPE}"
-	exit 1
 fi
 
 # vars
