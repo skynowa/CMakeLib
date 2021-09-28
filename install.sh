@@ -8,13 +8,19 @@ set -ex
 
 SUDO="sudo"
 
+# https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
 echo "OSTYPE: ${OSTYPE}"
 
 # TODO: MSVC - check
-if   [[ "${OSTYPE}" == "msys"* ]]; then
+if   [[ "${OSTYPE}" == "win"* ]]; then
 	SUDO=""
-elif [[ "${OSTYPE}" == "win"* ]]; then
+elif [[ "${OSTYPE}" == "msys"* ]]; then
 	SUDO=""
+else
+	SUDO=""
+
+	echo "Unknown OSTYPE: ${OSTYPE}"
+	exit 1
 fi
 
 # vars
