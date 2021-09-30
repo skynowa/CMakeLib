@@ -11,6 +11,7 @@
 #--------------------------------------------------------------------------------------------------
 find_path(cmEVENT2_INCLUDES
     NAMES
+        "event2/event.h"
         "event.h"
     PATHS
         "/usr/local/include"
