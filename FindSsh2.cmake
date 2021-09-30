@@ -21,6 +21,7 @@ find_path(cmSSH2_INCLUDES
 find_library(cmSSH2_LIBRARIES
     NAMES
         "ssh2"
+        "libssh2"
     PATHS
         "/lib"
         "/lib64"
