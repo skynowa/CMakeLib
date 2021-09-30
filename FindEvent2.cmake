@@ -23,7 +23,8 @@ find_path(cmEVENT2_INCLUDES
 find_library(cmEVENT2_LIBRARIES
     NAMES
         event
-        event2
+        event_core
+        libevent_core
     PATHS
         "/usr/local/lib"
         "/usr/local/lib64"
