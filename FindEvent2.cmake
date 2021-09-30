@@ -24,7 +24,6 @@ find_library(cmEVENT2_LIBRARIES
     NAMES
         event
         event_core
-        libevent_core
     PATHS
         "/usr/local/lib"
         "/usr/local/lib64"
