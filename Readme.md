@@ -1,5 +1,7 @@
 # CMakeLib - CMake library
 
+![GitHub Watchers](https://img.shields.io/github/watchers/skynowa/xLib)
+
 ## Install
 
 Use CMakeLists.txt or `install.sh`
