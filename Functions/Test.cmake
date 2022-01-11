@@ -6,8 +6,10 @@
 
 #--------------------------------------------------------------------------------------------------
 function(TEST EXPR)
-    if (NOT ${EXPR})
-        message(FATAL_ERROR "Test failed: ${EXPR}")
+    if (${EXPR})
+        return()
     endif()
+
+    message(FATAL_ERROR "Test failed: ${EXPR}")
 endfunction()
 #--------------------------------------------------------------------------------------------------
