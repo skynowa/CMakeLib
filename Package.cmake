@@ -9,7 +9,6 @@
 # options
 include(InstallRequiredSystemLibraries)
 set(CPACK_SET_DESTDIR ON)
-
 #--------------------------------------------------------------------------------------------------
 # settings
 set(CPACK_GENERATOR "ZIP")
@@ -32,9 +31,9 @@ set(CPACK_GENERATOR "ZIP")
     # List of four values: Build directory, Project Name, Project Component, Directory in the
     # package
     # Example: /home/andy/vtk/CMake-bin;CMake;ALL;/
-set(CPACK_PACKAGE_DESCRIPTION_FILE ${CMAKE_SOURCE_DIR}/Readme.txt)
+set(CPACK_PACKAGE_DESCRIPTION_FILE ${CMAKE_SOURCE_DIR}/Readme.md)
     # File used as a description of a project
-    # Example: /path/to/project/ReadMe.txt
+    # Example: /path/to/project/ReadMe.md
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Learning foreign words")
     # Description summary of a project
     # Example: CMake is a build tool
@@ -134,10 +133,10 @@ set(CPACK_OUTPUT_FILE_PREFIX ${CMAKE_SOURCE_DIR}/Distr/${CMAKE_BUILD_TYPE})
     # Example: /tmp/my_cpack_generated_packages
 #--------------------------------------------------------------------------------------------------
 include(CPack)
-
+#--------------------------------------------------------------------------------------------------
 # sudo apt-get install libegl1-mesa-dev libgles2-mesa-dev libgl1-mesa-dev
 # cd ..
-# mkdir ../XXXDb_build
-# cmake ../XXXDb
-# cpack ../XXXDb (or make package)
+# mkdir ../${PROJECT_NAME}_build
+# cmake ../${PROJECT_NAME}
+# cpack ../${PROJECT_NAME} (or make package)
 #--------------------------------------------------------------------------------------------------
