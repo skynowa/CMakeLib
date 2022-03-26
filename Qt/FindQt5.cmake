@@ -5,7 +5,7 @@
 
 
 #--------------------------------------------------------------------------------------------------.
-set(_QT5_MODULES Core Gui Widgets Sql Network Xml PrintSupport Concurrent WebKitWidgets)
+set(_QT5_MODULES Core Gui Widgets Sql Network Xml PrintSupport Concurrent)
 # TODO: Multimedia (as Config.h:OPTION_QTMULTIMEDIA)
 
 if (OS_ANDROID)
