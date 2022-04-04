@@ -17,7 +17,7 @@ find_path(cmXLIB_INCLUDES
         "/usr/local/include"
         "/usr/include"
     PATH_SUFFIXES
-        "xLib")
+        "")
 
 find_library(cmXLIB_LIBRARIES
     NAMES
@@ -27,7 +27,7 @@ find_library(cmXLIB_LIBRARIES
         "/usr/local/lib"
         "/usr/lib"
     PATH_SUFFIXES
-        "xLib")
+        "")
 
 if (NOT cmXLIB_INCLUDES AND cmXLIB_LIBRARIES)
     set(cmXLIB_FOUND 0)
