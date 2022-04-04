@@ -9,15 +9,16 @@
 
 
 #--------------------------------------------------------------------------------------------------
+# C:/Program Files/xLib/include/xLib/xLib.h
 find_path(cmXLIB_INCLUDES
     NAMES
         "xLib.h"
     PATHS
-        "C:/Program Files/xLib/include"
-        "/usr/local/include"
-        "/usr/include"
+        "C:/Program Files/xLib/include/xLib"
+        "/usr/local/include/xLib"
+        "/usr/include/xLib"
     PATH_SUFFIXES
-        "xLib")
+        "")
 
 find_library(cmXLIB_LIBRARIES
     NAMES
