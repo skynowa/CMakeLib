@@ -13,6 +13,7 @@ find_path(cmXLIB_INCLUDES
     NAMES
         "xLib.h"
     PATHS
+        "C:/Program Files/"
         "/usr/local/include"
         "/usr/include"
     PATH_SUFFIXES
@@ -22,6 +23,7 @@ find_library(cmXLIB_LIBRARIES
     NAMES
         "xLib_static"
     PATHS
+        "C:/Program Files/"
         "/usr/local/lib"
         "/usr/lib"
     PATH_SUFFIXES
