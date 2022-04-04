@@ -35,7 +35,7 @@ if (NOT cmXLIB_INCLUDES AND cmXLIB_LIBRARIES)
 else()
     set(cmXLIB_FOUND 1)
 
-    set(cmXLIB_INCLUDES ../${cmXLIB_INCLUDES})
+    get_filename_component(cmXLIB_INCLUDES ${cmXLIB_INCLUDES} DIRECTORY)
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
