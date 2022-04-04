@@ -8,30 +8,29 @@
 set(MANIFEST "${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt")
 message(STATUS "MANIFEST ${MANIFEST}")
 
-
 if (NOT EXISTS "${MANIFEST}")
-	message(WARNING "Uninstall - skipped, can't find install manifest: ${MANIFEST}")
-else()
-	file(READ "${MANIFEST}" files)
-	string(REGEX REPLACE "\n" ";" files "${files}")
-
-	foreach(file ${files})
-		message(STATUS "Uninstalling $ENV{DESTDIR}${file}")
-
-		if (IS_SYMLINK "$ENV{DESTDIR}${file}" OR EXISTS "$ENV{DESTDIR}${file}")
-			exec_program(
-				"${CMAKE_COMMAND}" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
-				OUTPUT_VARIABLE rm_out
-				RETURN_VALUE rm_retval)
-
-			if (NOT "${rm_retval}" STREQUAL 0)
-				message(FATAL_ERROR "Problem when removing $ENV{DESTDIR}${file}")
-			endif()
-		else()
-			message(STATUS "File $ENV{DESTDIR}${file} does not exist.")
-		endif()
-	endforeach()
+	message(FATAL_ERROR "Uninstall - skipped, can't find install manifest: ${MANIFEST}")
 endif()
+
+file(READ "${MANIFEST}" files)
+string(REGEX REPLACE "\n" ";" files "${files}")
+
+foreach(file ${files})
+	message(STATUS "Uninstalling $ENV{DESTDIR}${file}")
+
+	if (IS_SYMLINK "$ENV{DESTDIR}${file}" OR EXISTS "$ENV{DESTDIR}${file}")
+		exec_program(
+			"${CMAKE_COMMAND}" ARGS "-E remove \"$ENV{DESTDIR}${file}\""
+			OUTPUT_VARIABLE rm_out
+			RETURN_VALUE rm_retval)
+
+		if (NOT "${rm_retval}" STREQUAL 0)
+			message(FATAL_ERROR "Problem when removing $ENV{DESTDIR}${file}")
+		endif()
+	else()
+		message(STATUS "File $ENV{DESTDIR}${file} does not exist.")
+	endif()
+endforeach()
 #--------------------------------------------------------------------------------------------------
 message(STATUS "Uninstalling ${PROJECT_INSTALL_PATH}")
 

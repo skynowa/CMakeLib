@@ -28,8 +28,7 @@ install(
         PATTERN "FindCMakeLib.cmake" EXCLUDE
         PATTERN "Templates"          EXCLUDE
         PATTERN "install.sh"         EXCLUDE
-        PATTERN "uninstall.sh"       EXCLUDE
-        PATTERN "Uninstall.cmake"    EXCLUDE)
+        PATTERN "uninstall.sh"       EXCLUDE)
 
 # files
 install(
