@@ -21,7 +21,7 @@ find_path(cmXLIB_DATA_DIR
     NAMES
         "xLib-data"
     PATHS
-        # "${XLIB_LOCATION}/.."
+        "${XLIB_LOCATION}/.."
         "/home/runner/work/xLib/xLib"	# Github CI
     PATH_SUFFIXES
         "")
