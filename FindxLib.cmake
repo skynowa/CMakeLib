@@ -11,13 +11,13 @@
 #--------------------------------------------------------------------------------------------------
 find_path(cmXLIB_INCLUDES
     NAMES
-        "xLib.h"
+        "xLib"
     PATHS
         "C:/Program Files/xLib/include"
         "/usr/local/include"
         "/usr/include"
-    PATH_SUFFIXES
-        "xLib")
+    DOC
+        "xLib - include dir")
 
 find_library(cmXLIB_LIBRARIES
     NAMES
@@ -26,15 +26,13 @@ find_library(cmXLIB_LIBRARIES
         "C:/Program Files/xLib/lib"
         "/usr/local/lib"
         "/usr/lib"
-    PATH_SUFFIXES
-        "")
+    DOC
+        "xLib - libraries")
 
 if (NOT cmXLIB_INCLUDES AND cmXLIB_LIBRARIES)
     set(cmXLIB_FOUND 0)
 else()
     set(cmXLIB_FOUND 1)
-
-    get_filename_component(cmXLIB_INCLUDES ${cmXLIB_INCLUDES} DIRECTORY)
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
