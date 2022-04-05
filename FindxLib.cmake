@@ -51,8 +51,8 @@ set(cmXLIB_LIBRARIES ${cmXLIB_LIBRARIES} advapi32 ws2_32 netapi32 psapi uuid ole
     ### crypto
     ### mysqlclient
     ### ssh2
-    curl
-    xml2
+    ### curl
+    ### xml2
     ### xcb
     ### X11-xcb
     ### dl
