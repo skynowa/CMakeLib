@@ -9,7 +9,7 @@
 
 
 #--------------------------------------------------------------------------------------------------
-if (NOT EXISTS "${CMAKE_SOURCE_DIR}/.git" AND NOT EXISTS "${CMAKE_SOURCE_DIR}/Tests/.git")
+if ((NOT EXISTS "${CMAKE_SOURCE_DIR}/.git") AND (NOT EXISTS "${CMAKE_SOURCE_DIR}/Tests/.git"))
     set(cmGIT_REVISION_FOUND  0)
     set(cmGIT_REVISION_BRANCH "")
     set(cmGIT_REVISION_HASH   "")
