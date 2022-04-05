@@ -9,6 +9,9 @@
 
 
 #--------------------------------------------------------------------------------------------------
+# -- Installing: C:/Program Files/xLib/lib/xLib_static.lib
+# -- Installing: C:/Program Files/xLib/include/xLib
+
 find_path(cmXLIB_INCLUDES
     NAMES
         "xLib"
@@ -19,6 +22,7 @@ find_path(cmXLIB_INCLUDES
         # Unix
         "/usr/local/include"
         "/usr/include"
+    NO_DEFAULT_PATH
     DOC
         "xLib - include dir")
 
