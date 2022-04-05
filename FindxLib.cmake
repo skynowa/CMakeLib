@@ -46,21 +46,21 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
-set(cmXLIB_LIBRARIES ${cmXLIB_LIBRARIES}
-    libssl  ### ssl
-    crypto
-    mysqlclient
-    ssh2
-    curl
-    xml2
-    xcb
-    X11-xcb
-    dl
-    pthread
-    rt
-    m
-    z
-    xLib_static)
+### set(cmXLIB_LIBRARIES ${cmXLIB_LIBRARIES}
+#     libssl  ### ssl
+#     crypto
+#     mysqlclient
+#     ssh2
+#     curl
+#     xml2
+#     xcb
+#     X11-xcb
+#     dl
+#     pthread
+#     rt
+#     m
+#     z
+#     xLib_static)
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmXLIB_FOUND: ${cmXLIB_FOUND}")
