@@ -14,7 +14,7 @@
 
 find_path(cmXLIB_INCLUDES
     NAMES
-        "xLib"
+        "xLib/xLib.h"
     PATHS
         # Win
         "C:/Program Files/xLib/include"
@@ -22,7 +22,6 @@ find_path(cmXLIB_INCLUDES
         # Unix
         "/usr/local/include"
         "/usr/include"
-    NO_DEFAULT_PATH
     DOC
         "xLib - include dir")
 
