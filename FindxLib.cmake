@@ -9,7 +9,6 @@
 
 
 #--------------------------------------------------------------------------------------------------
-# C:/Program Files/xLib/include/xLib/xLib.h
 find_path(cmXLIB_INCLUDES
     NAMES
         "xLib.h"
