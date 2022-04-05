@@ -13,7 +13,10 @@ find_path(cmXLIB_INCLUDES
     NAMES
         "xLib"
     PATHS
+        # Win
         "C:/Program Files/xLib/include"
+
+        # Unix
         "/usr/local/include"
         "/usr/include"
     DOC
@@ -23,7 +26,10 @@ find_library(cmXLIB_LIBRARIES
     NAMES
         "xLib_static"
     PATHS
+        # Win
         "C:/Program Files/xLib/lib"
+
+        # Unix
         "/usr/local/lib"
         "/usr/lib"
     DOC

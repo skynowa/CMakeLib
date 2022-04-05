@@ -9,28 +9,43 @@
 
 
 #--------------------------------------------------------------------------------------------------
-if ((NOT EXISTS "${CMAKE_SOURCE_DIR}/.git") AND (NOT EXISTS "../.git"))
-    set(cmGIT_REVISION_FOUND  0)
-    set(cmGIT_REVISION_BRANCH "")
-    set(cmGIT_REVISION_HASH   "")
+# cmGIT_REVISION_BRANCH
+execute_process(
+    COMMAND
+        git rev-parse --abbrev-ref HEAD
+    RESULT_VARIABLE
+        STATUS
+    WORKING_DIRECTORY
+        ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE
+        cmGIT_REVISION_BRANCH
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+if (STATUS AND NOT STATUS EQUAL 0)
+    message(FATAL_ERROR "FAILED: ${STATUS}")
+endif()
+
+# cmGIT_REVISION_HASH
+execute_process(
+    COMMAND
+        git log -1 --format=%h
+    RESULT_VARIABLE
+        STATUS
+    WORKING_DIRECTORY
+        ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE
+        cmGIT_REVISION_HASH
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+if (STATUS AND NOT STATUS EQUAL 0)
+    message(FATAL_ERROR "FAILED: ${STATUS}")
+endif()
+
+# cmGIT_REVISION_FOUND
+if (NOT cmGIT_REVISION_BRANCH AND cmGIT_REVISION_HASH)
+    set(cmGIT_REVISION_FOUND 0)
 else()
-    execute_process(
-        COMMAND git rev-parse --abbrev-ref HEAD
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        OUTPUT_VARIABLE cmGIT_REVISION_BRANCH
-        OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-    execute_process(
-        COMMAND git log -1 --format=%h
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        OUTPUT_VARIABLE cmGIT_REVISION_HASH
-        OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-    if (NOT cmGIT_REVISION_BRANCH AND cmGIT_REVISION_HASH)
-        set(cmGIT_REVISION_FOUND 0)
-    else()
-        set(cmGIT_REVISION_FOUND 1)
-    endif()
+    set(cmGIT_REVISION_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
 # trace

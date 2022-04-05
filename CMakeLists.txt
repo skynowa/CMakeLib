@@ -1,6 +1,6 @@
 #--------------------------------------------------------------------------------------------------
 # \file  CMakeLists.txt
-# \brief Install CMakeLib as modules
+# \brief CMakeLib - install as modules
 #
 # In project use CMake:
 #
