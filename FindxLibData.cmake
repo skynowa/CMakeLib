@@ -11,17 +11,17 @@
 unset(cmXLIB_DATA_FOUND CACHE)
 unset(cmXLIB_DATA_DIR   CACHE)
 
-if (NOT XLIB_LOCATION)
-    set(cmXLIB_DATA_FOUND 0)
+# if (NOT XLIB_LOCATION)
+#     set(cmXLIB_DATA_FOUND 0)
 
-    message(FATAL_ERROR "XLIB_LOCATION: ${XLIB_LOCATION}")
-endif()
+#     message(FATAL_ERROR "XLIB_LOCATION: ${XLIB_LOCATION}")
+# endif()
 
 find_path(cmXLIB_DATA_DIR
     NAMES
         "xLib-data"
     PATHS
-        "${XLIB_LOCATION}/.."
+        # "${XLIB_LOCATION}/.."
         "/home/runner/work/xLib/xLib"	# Github CI
     PATH_SUFFIXES
         "")
