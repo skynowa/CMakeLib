@@ -47,7 +47,7 @@ endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
 set(cmXLIB_LIBRARIES ${cmXLIB_LIBRARIES}
-    ssl
+    libssl  ### ssl
     crypto
     mysqlclient
     ssh2
