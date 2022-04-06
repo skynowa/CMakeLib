@@ -5,7 +5,7 @@
 # cmXLIB_FOUND     - true if system has library
 # cmXLIB_INCLUDES  - include directories
 # cmXLIB_LIBRARIES - libraries
-# cmXLIB_EXTRA_LIBRARIES - libraries
+# cmXLIB_EXTRA_LIBRARIES - extra libraries
 #--------------------------------------------------------------------------------------------------
 
 
