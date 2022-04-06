@@ -2,10 +2,11 @@
 # \file  FindxLib.cmake
 # \brief Find xLib includes and library
 #
-# cmXLIB_FOUND     - true if system has library
-# cmXLIB_INCLUDES  - include directories
-# cmXLIB_LIBRARIES - libraries
-# cmXLIB_SYS_LIBRARIES - system libraries
+# cmXLIB_FOUND           - true if system has library
+# cmXLIB_INCLUDES        - include directories
+# cmXLIB_LIBRARIES       - libraries
+# cmXLIB_SYS_LIBRARIES   - system libraries
+# cmXLIB_EXTRA_LIBRARIES - extra libraries
 #--------------------------------------------------------------------------------------------------
 
 
@@ -46,28 +47,39 @@ else()
     set(cmXLIB_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
-# TODO: libraries - gen from CMake
-set(cmXLIB_SYS_LIBRARIES advapi32 ws2_32 netapi32 psapi uuid ole32 mpr dbghelp crypt32
-    ### ssl
-    ### crypto
-    ### mysqlclient
-    ### ssh2
-    ### curl
-    ### xml2
-    ### xcb
-    ### X11-xcb
-    ### dl
-    ### pthread
-    ### rt
-    ### m
-    ### z
-)
+set(cmXLIB_SYS_LIBRARIES
+    advapi32
+    ws2_32
+    netapi32
+    psapi
+    uuid
+    ole32
+    mpr
+    dbghelp
+    crypt32)
+
+# TODO: extra libraries - gen from CMake + use it
+set(cmXLIB_EXTRA_LIBRARIES
+    ssl
+    crypto
+    mysqlclient
+    ssh2
+    curl
+    xml2
+    xcb
+    X11-xcb
+    dl
+    pthread
+    rt
+    m
+    z)
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmXLIB_FOUND: ${cmXLIB_FOUND}")
-message("   cmXLIB_INCLUDES:      ${cmXLIB_INCLUDES}")
-message("   cmXLIB_LIBRARIES:     ${cmXLIB_LIBRARIES}")
-message("   cmXLIB_SYS_LIBRARIES: ${cmXLIB_SYS_LIBRARIES}")
+message("   cmXLIB_INCLUDES:        ${cmXLIB_INCLUDES}")
+message("   cmXLIB_LIBRARIES:       ${cmXLIB_LIBRARIES}")
+message("   cmXLIB_SYS_LIBRARIES:   ${cmXLIB_SYS_LIBRARIES}")
+message("   cmXLIB_EXTRA_LIBRARIES: ${cmXLIB_EXTRA_LIBRARIES}")
 
 if (NOT cmXLIB_FOUND AND xLib_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
