@@ -47,6 +47,7 @@ else()
     set(cmXLIB_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
+# TDDO: cmXLIB_SYS_LIBRARIES
 set(cmXLIB_SYS_LIBRARIES
     advapi32
     ws2_32
@@ -58,7 +59,7 @@ set(cmXLIB_SYS_LIBRARIES
     dbghelp
     crypt32)
 
-# TODO: extra libraries - gen from CMake + use it
+# TODO: cmXLIB_EXTRA_LIBRARIES - gen from CMake + use it
 set(cmXLIB_EXTRA_LIBRARIES
     ssl
     crypto
