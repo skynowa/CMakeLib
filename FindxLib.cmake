@@ -5,7 +5,7 @@
 # cmXLIB_FOUND     - true if system has library
 # cmXLIB_INCLUDES  - include directories
 # cmXLIB_LIBRARIES - libraries
-# cmXLIB_EXTRA_LIBRARIES - extra libraries
+# cmXLIB_SYS_LIBRARIES - system libraries
 #--------------------------------------------------------------------------------------------------
 
 
@@ -47,7 +47,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
-set(cmXLIB_EXTRA_LIBRARIES advapi32 ws2_32 netapi32 psapi uuid ole32 mpr dbghelp crypt32
+set(cmXLIB_SYS_LIBRARIES advapi32 ws2_32 netapi32 psapi uuid ole32 mpr dbghelp crypt32
     ### ssl
     ### crypto
     ### mysqlclient
@@ -65,8 +65,9 @@ set(cmXLIB_EXTRA_LIBRARIES advapi32 ws2_32 netapi32 psapi uuid ole32 mpr dbghelp
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmXLIB_FOUND: ${cmXLIB_FOUND}")
-message("   cmXLIB_INCLUDES:  ${cmXLIB_INCLUDES}")
-message("   cmXLIB_LIBRARIES: ${cmXLIB_LIBRARIES}")
+message("   cmXLIB_INCLUDES:      ${cmXLIB_INCLUDES}")
+message("   cmXLIB_LIBRARIES:     ${cmXLIB_LIBRARIES}")
+message("   cmXLIB_SYS_LIBRARIES: ${cmXLIB_SYS_LIBRARIES}")
 
 if (NOT cmXLIB_FOUND AND xLib_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
