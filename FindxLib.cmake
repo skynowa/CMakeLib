@@ -5,6 +5,7 @@
 # cmXLIB_FOUND     - true if system has library
 # cmXLIB_INCLUDES  - include directories
 # cmXLIB_LIBRARIES - libraries
+# cmXLIB_EXTRA_LIBRARIES - libraries
 #--------------------------------------------------------------------------------------------------
 
 
@@ -46,7 +47,7 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: libraries - gen from CMake
-set(cmXLIB_LIBRARIES ${cmXLIB_LIBRARIES} advapi32 ws2_32 netapi32 psapi uuid ole32 mpr dbghelp crypt32
+set(cmXLIB_EXTRA_LIBRARIES advapi32 ws2_32 netapi32 psapi uuid ole32 mpr dbghelp crypt32
     ### ssl
     ### crypto
     ### mysqlclient
