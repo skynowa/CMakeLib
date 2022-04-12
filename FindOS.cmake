@@ -49,7 +49,7 @@ elseif (UNIX)
         set(ENV_APPLE TRUE)
     endif()
 else()
-
+    message(ERROR "Get ENV_ - failed")
 endif()
 #--------------------------------------------------------------------------------------------------
 # OS

@@ -47,17 +47,29 @@ else()
     set(cmXLIB_FOUND 1)
 endif()
 #--------------------------------------------------------------------------------------------------
-# TDDO: cmXLIB_SYS_LIBRARIES
-set(cmXLIB_SYS_LIBRARIES
-    advapi32
-    ws2_32
-    netapi32
-    psapi
-    uuid
-    ole32
-    mpr
-    dbghelp
-    crypt32)
+# cmXLIB_SYS_LIBRARIES
+if     (WIN32)
+    set(cmXLIB_SYS_LIBRARIES
+        advapi32
+        ws2_32
+        netapi32
+        psapi
+        uuid
+        ole32
+        mpr
+        dbghelp
+        crypt32)
+elseif (UNIX)
+    set(cmXLIB_SYS_LIBRARIES
+        ${CMAKE_THREAD_LIBS_INIT}
+        ${CMAKE_DL_LIBS}
+        pthread
+        rt
+        m
+        z)
+else()
+    message(ERROR "Get OS env - failed")
+endif()
 
 # TODO: cmXLIB_EXTRA_LIBRARIES - gen from CMake + use it
 set(cmXLIB_EXTRA_LIBRARIES
