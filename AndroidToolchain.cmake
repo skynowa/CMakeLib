@@ -1,4 +1,4 @@
-# ----------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------
 #  Android CMake toolchain file, for use with the ndk r5,r6
 #  See home page: http://code.google.com/p/android-cmake/
 #      http://enl.usc.edu/enl/trunk/aqua/OpenCV-2.3.1/share/OpenCV/android.toolchain.cmake
@@ -70,7 +70,17 @@
 #     Base system is Linux, but you may need to change things
 #     for android compatibility.
 #
-# ----------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------
+# CMake build
+#
+# cmake \
+#   -G"${GENERATOR}" \
+#   -D_ECLIPSE_VERSION=${ECLIPSE_VERSION} \
+#   -DCMAKE_TOOLCHAIN_FILE=${DIR_PROJECT}/CMake/android.toolchain.cmake \
+#   ${DIR_PROJECT}
+#--------------------------------------------------------------------------------------------------
 
 
 #--------------------------------------------------------------------------------------------------
