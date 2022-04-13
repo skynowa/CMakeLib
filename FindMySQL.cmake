@@ -36,9 +36,9 @@ else()
         NAMES
             "mysql.h"
         PATHS
-            "/usr/include"
             "/usr/local/include"
             "/usr/mysql/include"
+            "/usr/include"
         PATH_SUFFIXES
             "mysql")
 
@@ -47,15 +47,16 @@ else()
             "mysqlclient"
             "mysqlclient_r"
         PATHS
-            "/lib/mysql"
-            "/lib64/mysql"
-            "/usr/lib/mysql"
-            "/usr/lib64/mysql"
-            "/usr/lib/x86_64-linux-gnu"
             "/usr/local/lib/mysql"
             "/usr/local/lib64/mysql"
             "/usr/mysql/lib/mysql"
             "/usr/mysql/lib64/mysql"
+            "/usr/lib64/mysql"
+            "/usr/lib/mysql"
+            "/usr/lib/x86_64-linux-gnu"
+            "/lib64/mysql"
+            "/lib/mysql"
+
         PATH_SUFFIXES
             "mysql")
 endif()
