@@ -24,12 +24,12 @@ find_library(PCRE_PP_LIBRARIES
     NAMES
 		pcre++
     PATHS
-        "/usr/local/lib"
         "/usr/local/lib64"
-        "/usr/lib"
+        "/usr/local/lib"
         "/usr/lib64"
-        "/lib"
+        "/usr/lib"
         "/lib64"
+        "/lib"
     PATH_SUFFIXES
         "")
 
