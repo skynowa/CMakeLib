@@ -4,7 +4,7 @@
 # \brief build project
 #
 
-set -ex
+# set -ex
 
 SUDO="sudo"
 
