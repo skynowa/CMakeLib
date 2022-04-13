@@ -3,7 +3,7 @@
 # \brief More CMAKE_CXX_FLAGS
 #
 # MSVC  -
-# Clamg -
+# Clang -
 # MINGW -
 # GCC   - http://gcc.gnu.org/onlinedocs/
 #
