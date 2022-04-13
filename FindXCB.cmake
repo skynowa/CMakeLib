@@ -15,8 +15,8 @@ if (UNIX)
         NAMES
             "xcb/xcb.h"
         PATHS
-            "/usr/include"
             "/usr/local/include"
+            "/usr/include"
         PATH_SUFFIXES
             ""
         DOC
@@ -26,8 +26,8 @@ if (UNIX)
         NAMES
             "X11/Xlib-xcb.h"
         PATHS
-            "/usr/include"
             "/usr/local/include"
+            "/usr/include"
         PATH_SUFFIXES
             ""
         DOC
@@ -37,13 +37,13 @@ if (UNIX)
         NAMES
             "xcb"
         PATHS
-            "/lib"
-            "/lib64"
-            "/usr/lib"
-            "/usr/lib64"
-            "/usr/lib/x86_64-linux-gnu/"
-            "/usr/local/lib"
             "/usr/local/lib64"
+            "/usr/local/lib"
+            "/usr/lib/x86_64-linux-gnu/"
+            "/usr/lib64"
+            "/usr/lib"
+            "/lib64"
+            "/lib"
         PATH_SUFFIXES
             ""
         DOC
@@ -61,13 +61,13 @@ if (UNIX)
         NAMES
             "X11-xcb"
         PATHS
-            "/lib"
-            "/lib64"
-            "/usr/lib"
-            "/usr/lib64"
-            "/usr/lib/x86_64-linux-gnu/"
-            "/usr/local/lib"
             "/usr/local/lib64"
+            "/usr/local/lib"
+            "/usr/lib/x86_64-linux-gnu/"
+            "/usr/lib64"
+            "/usr/lib"
+            "/lib64"
+            "/lib"
         PATH_SUFFIXES
             ""
         DOC
