@@ -50,7 +50,7 @@ endif()
 # cmXLIB_SYS_LIBRARIES
 set(cmXLIB_SYS_LIBRARIES
     ${CMAKE_THREAD_LIBS_INIT}
-    ${CMAKE_DL_LIBS}
+    ${CMAKE_DL_LIBS})
 
 if     (WIN32)
     set(cmXLIB_SYS_LIBRARIES
