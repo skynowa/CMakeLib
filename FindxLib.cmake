@@ -84,12 +84,7 @@ set(cmXLIB_EXTRA_LIBRARIES
     curl
     xml2
     xcb
-    X11-xcb
-    dl
-    pthread
-    rt
-    m
-    z)
+    X11-xcb)
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmXLIB_FOUND: ${cmXLIB_FOUND}")
