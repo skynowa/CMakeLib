@@ -48,8 +48,13 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # cmXLIB_SYS_LIBRARIES
+set(cmXLIB_SYS_LIBRARIES
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${CMAKE_DL_LIBS}
+
 if     (WIN32)
     set(cmXLIB_SYS_LIBRARIES
+        ${cmXLIB_SYS_LIBRARIES}
         advapi32
         ws2_32
         netapi32
@@ -61,8 +66,7 @@ if     (WIN32)
         crypt32)
 elseif (UNIX)
     set(cmXLIB_SYS_LIBRARIES
-        ${CMAKE_THREAD_LIBS_INIT}
-        ${CMAKE_DL_LIBS}
+        ${cmXLIB_SYS_LIBRARIES}
         pthread
         rt
         m
