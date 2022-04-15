@@ -30,7 +30,7 @@ find_path(cmXLIB_INCLUDES
 
 find_library(cmXLIB_LIBRARIES
     NAMES
-        "xLib_static"
+        "xLib"
     PATHS
         # Win
         "C:/Program Files/xLib/lib"
