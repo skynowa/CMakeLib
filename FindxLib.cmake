@@ -75,7 +75,7 @@ elseif (UNIX)
 else()
     message(ERROR "Get OS env - failed")
 endif()
-
+#--------------------------------------------------------------------------------------------------
 # TODO: cmXLIB_EXTRA_LIBRARIES - gen from CMake + use it
 set(cmXLIB_EXTRA_LIBRARIES
     libssl
@@ -83,9 +83,18 @@ set(cmXLIB_EXTRA_LIBRARIES
     mysqlclient
     libssh2
     libcurl
-    libxml2
-    xcb
-    X11-xcb)
+    libxml2)
+
+if     (WIN32)
+    # n/a
+elseif (UNIX)
+    set(cmXLIB_EXTRA_LIBRARIES
+        ${cmXLIB_EXTRA_LIBRARIES}
+        xcb
+        X11-xcb)
+else()
+    message(ERROR "Get OS env - failed")
+endif()
 #--------------------------------------------------------------------------------------------------
 # trace
 message(STATUS "cmXLIB_FOUND: ${cmXLIB_FOUND}")
