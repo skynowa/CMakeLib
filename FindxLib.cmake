@@ -82,14 +82,16 @@ set(cmXLIB_EXTRA_LIBRARIES
     libcrypto
     mysqlclient
     libssh2
-    libcurl
-    libxml2)
+    libcurl)
 
 if     (WIN32)
-    # n/a
+    set(cmXLIB_EXTRA_LIBRARIES
+        ${cmXLIB_EXTRA_LIBRARIES}
+        libxml2_a)
 elseif (UNIX)
     set(cmXLIB_EXTRA_LIBRARIES
         ${cmXLIB_EXTRA_LIBRARIES}
+        libxml2
         xcb
         X11-xcb)
 else()
