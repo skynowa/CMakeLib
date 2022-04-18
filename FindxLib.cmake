@@ -78,12 +78,12 @@ endif()
 
 # TODO: cmXLIB_EXTRA_LIBRARIES - gen from CMake + use it
 set(cmXLIB_EXTRA_LIBRARIES
-    ssl
-    crypto
+    libssl
+    libcrypto
     mysqlclient
-    ssh2
-    curl
-    xml2
+    libssh2
+    libcurl
+    libxml2
     xcb
     X11-xcb)
 #--------------------------------------------------------------------------------------------------
