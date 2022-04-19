@@ -53,7 +53,7 @@ set(cmXLIB_SYS_LIBRARIES
     ${CMAKE_THREAD_LIBS}
     ${CMAKE_DL_LIBS})
 
-if     (WIN32)
+if (WIN32)
     set(cmXLIB_SYS_LIBRARIES
         ${cmXLIB_SYS_LIBRARIES}
         advapi32
@@ -77,21 +77,22 @@ else()
 endif()
 #--------------------------------------------------------------------------------------------------
 # TODO: cmXLIB_EXTRA_LIBRARIES - gen from CMake + use it
-set(cmXLIB_EXTRA_LIBRARIES
-    libssl
-    libcrypto
-    mysqlclient
-    libssh2
-    libcurl)
-
-if     (WIN32)
+if (WIN32)
     set(cmXLIB_EXTRA_LIBRARIES
-        ${cmXLIB_EXTRA_LIBRARIES}
+        libssl
+        libcrypto
+        mysqlclient
+        libssh2
+        libcurl
         libxml2_a)
 elseif (UNIX)
     set(cmXLIB_EXTRA_LIBRARIES
-        ${cmXLIB_EXTRA_LIBRARIES}
-        libxml2
+        ssl
+        crypto
+        mysqlclient
+        ssh2
+        curl
+        xml2
         xcb
         X11-xcb)
 else()
