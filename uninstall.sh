@@ -5,13 +5,18 @@
 #
 
 
+SUDO="sudo"
+
+if [[ "${OSTYPE}" == "win"* || "${OSTYPE}" == "msys"* ]]; then
+	SUDO=""
+fi
+
 # vars
 DIR_BUILD="../CMakeLib_build"
-
 
 # Uninstall
 echo "Uninstall ..."
 
 cd $DIR_BUILD
 
-sudo cmake --build . --target uninstall
+${SUDO} cmake --build . --target uninstall

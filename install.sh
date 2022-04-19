@@ -4,17 +4,13 @@
 # \brief build project
 #
 
+
 # set -ex
 
 SUDO="sudo"
 
 # https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
-echo "OSTYPE: ${OSTYPE}"
-
-# TODO: MSVC - check
-if   [[ "${OSTYPE}" == "win"* ]]; then
-	SUDO=""
-elif [[ "${OSTYPE}" == "msys"* ]]; then
+if [[ "${OSTYPE}" == "win"* || "${OSTYPE}" == "msys"* ]]; then
 	SUDO=""
 fi
 
