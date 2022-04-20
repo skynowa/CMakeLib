@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------------------------------------
-# \file  CxxFlags.cmake
+# \file  WarningFlags_gcc_4.6.4.cmake
 # \brief CMAKE_CXX_FLAGS for GCC 4.6.4
 #
 # Doc - https://gcc.gnu.org/onlinedocs/gcc-4.6.4/gcc/Option-Summary.html#Option-Summary

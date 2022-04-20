@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------------------------------------
-# \file  CxxFlags.cmake
+# \file  WarningFlags.cmake
 # \brief Extra warning level
 #
 # MSVC  -
@@ -41,7 +41,7 @@ elseif (CMAKE_COMPILER_IS_GNUCXX)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wformat -Wformat-security")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fstack-protector")
     else()
-        include(CMake/CxxFlags_gcc_4.6.4.cmake)
+        include(CMake/WarningFlags_gcc_4.6.4.cmake)
     endif()
 else()
     message("Unknown compiler")
