@@ -6,6 +6,8 @@
 # cmXLIB_INCLUDES        - include directories
 # cmXLIB_LIBRARIES       - libraries
 # cmXLIB_SYS_LIBRARIES   - system libraries
+#
+# TODO: cmXLIB_EXTRA_INCLUDES  - extra includes
 # cmXLIB_EXTRA_LIBRARIES - extra libraries
 #--------------------------------------------------------------------------------------------------
 
