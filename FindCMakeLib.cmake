@@ -13,7 +13,6 @@ find_path(CMAKE_LIB_INCLUDES
         "CMakeLib"
     PATHS
 		"${CMAKE_ROOT}/Modules"
-        "~/Projects"
     PATH_SUFFIXES
         ""
     DOC
