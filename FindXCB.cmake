@@ -33,7 +33,7 @@ if (UNIX)
         DOC
             "The directory where X11/Xlib-xcb.h resides")
 
-    find_library(cmXCB_LIBRARY
+    find_library(cmXCB_LIBRARIES
         NAMES
             "xcb"
         PATHS
@@ -49,7 +49,7 @@ if (UNIX)
         DOC
             "The xcb library")
 
-    # find_library(cmXCB_XLIB_LIBRARY
+    # find_library(cmXCB_XLIB_LIBRARIES
     #     NAMES
     #         "xcb-xlib"
     #     PATHS
@@ -57,7 +57,7 @@ if (UNIX)
     #     DOC
     #         "The xcb-xlib library")
 
-    find_library(cmXLIB_XCB_LIBRARY
+    find_library(cmXLIB_XCB_LIBRARIES
         NAMES
             "X11-xcb"
         PATHS
@@ -73,7 +73,7 @@ if (UNIX)
         DOC
             "The X11-xcb library")
 
-    set(cmXCB_LIBRARIES ${cmXCB_LIBRARY} ${cmXLIB_XCB_LIBRARY}) # ${cmXCB_XLIB_LIBRARY}
+    set(cmXCB_LIBRARIES ${cmXCB_LIBRARIES} ${cmXLIB_XCB_LIBRARIES}) # ${cmXCB_XLIB_LIBRARIES}
 endif()
 
 if (NOT cmXCB_INCLUDE_DIR AND cmXCB_LIBRARIES)
