@@ -49,13 +49,13 @@ if (UNIX)
         DOC
             "The xcb library")
 
-    find_library(cmXCB_XLIB_LIBRARIES
-        NAMES
-            "xcb-xlib"
-        PATHS
-            "/usr/lib"
-        DOC
-            "The xcb-xlib library")
+    # find_library(cmXCB_XLIB_LIBRARIES
+    #     NAMES
+    #         "xcb-xlib"
+    #     PATHS
+    #         "/usr/lib"
+    #     DOC
+    #         "The xcb-xlib library")
 
     find_library(cmXLIB_XCB_LIBRARIES
         NAMES
@@ -73,7 +73,7 @@ if (UNIX)
         DOC
             "The X11-xcb library")
 
-    set(cmXCB_LIBRARIES ${cmXCB_LIBRARIES} ${cmXCB_XLIB_LIBRARIES}) # ${cmXLIB_XCB_LIBRARIES}
+    set(cmXCB_LIBRARIES ${cmXCB_LIBRARIES} ${cmXLIB_XCB_LIBRARIES}) # ${cmXCB_XLIB_LIBRARIES}
 endif()
 
 if (NOT cmXCB_INCLUDE_DIR AND cmXCB_LIBRARIES)
