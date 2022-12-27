@@ -34,21 +34,21 @@ if (UNIX)
         DOC
             "The directory where X11/Xlib-xcb.h resides")
 
-    find_library(cmXCB_LIBRARIES
-        NAMES
-            "xcb"
-        PATHS
-            "/usr/local/lib64"
-            "/usr/local/lib"
-            "/usr/lib/x86_64-linux-gnu/"
-            "/usr/lib64"
-            "/usr/lib"
-            "/lib64"
-            "/lib"
-        PATH_SUFFIXES
-            ""
-        DOC
-            "The xcb library")
+    # find_library(cmXCB_LIBRARIES
+    #     NAMES
+    #         "xcb"
+    #     PATHS
+    #         "/usr/local/lib64"
+    #         "/usr/local/lib"
+    #         "/usr/lib/x86_64-linux-gnu/"
+    #         "/usr/lib64"
+    #         "/usr/lib"
+    #         "/lib64"
+    #         "/lib"
+    #     PATH_SUFFIXES
+    #         ""
+    #     DOC
+    #         "The xcb library")
 
     # find_library(cmXCB_XLIB_LIBRARIES
     #     NAMES
