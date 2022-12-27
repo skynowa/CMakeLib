@@ -5,8 +5,7 @@
 # cmXCB_FOUND             - true if XCB is available
 # cmXCB_INCLUDE_DIR       - include directories to use XCB
 # cmXLIB_XCB_INCLUDE_PATH - include directories to use XLIB/XCB
-# cmXCB_LIBRARIES         - link against these to use XCB
-# cmXLIB_XCB_LIBRARIES    - link against these to use XLIB/XCB
+# cmXCB_LIBRARIES         - link against these to use XCB + XLIB/XCB
 #--------------------------------------------------------------------------------------------------
 
 
@@ -34,23 +33,23 @@ if (UNIX)
         DOC
             "The directory where X11/Xlib-xcb.h resides")
 
-    # find_library(cmXCB_LIBRARIES
-    #     NAMES
-    #         "xcb"
-    #     PATHS
-    #         "/usr/local/lib64"
-    #         "/usr/local/lib"
-    #         "/usr/lib/x86_64-linux-gnu/"
-    #         "/usr/lib64"
-    #         "/usr/lib"
-    #         "/lib64"
-    #         "/lib"
-    #     PATH_SUFFIXES
-    #         ""
-    #     DOC
-    #         "The xcb library")
+    find_library(_cmXCB_LIBRARIES
+        NAMES
+            "xcb"
+        PATHS
+            "/usr/local/lib64"
+            "/usr/local/lib"
+            "/usr/lib/x86_64-linux-gnu/"
+            "/usr/lib64"
+            "/usr/lib"
+            "/lib64"
+            "/lib"
+        PATH_SUFFIXES
+            ""
+        DOC
+            "The xcb library")
 
-    # find_library(cmXCB_XLIB_LIBRARIES
+    # find_library(_cmXCB_XLIB_LIBRARIES
     #     NAMES
     #         "xcb-xlib"
     #     PATHS
@@ -58,7 +57,7 @@ if (UNIX)
     #     DOC
     #         "The xcb-xlib library")
 
-    find_library(cmXLIB_XCB_LIBRARIES
+    find_library(_cmXLIB_XCB_LIBRARIES
         NAMES
             "X11-xcb"
         PATHS
@@ -74,7 +73,7 @@ if (UNIX)
         DOC
             "The X11-xcb library")
 
-    set(cmXCB_LIBRARIES ${cmXCB_LIBRARIES} ${cmXLIB_XCB_LIBRARIES}) # ${cmXCB_XLIB_LIBRARIES}
+    set(cmXCB_LIBRARIES ${_cmXCB_LIBRARIES} ${_cmXLIB_XCB_LIBRARIES}) # ${_cmXCB_XLIB_LIBRARIES}
 endif()
 
 if (NOT cmXCB_INCLUDE_DIR AND cmXCB_LIBRARIES)
@@ -88,7 +87,8 @@ message(STATUS "cmXCB_FOUND: ${cmXCB_FOUND}")
 message("   cmXCB_INCLUDE_DIR:       ${cmXCB_INCLUDE_DIR}")
 message("   cmXLIB_XCB_INCLUDE_PATH: ${cmXLIB_XCB_INCLUDE_PATH}")
 message("   cmXCB_LIBRARIES:         ${cmXCB_LIBRARIES}")
-message("   cmXLIB_XCB_LIBRARIES:    ${cmXLIB_XCB_LIBRARIES}")
+message("   _cmXCB_LIBRARIES:        ${_cmXCB_LIBRARIES}")
+message("   _cmXLIB_XCB_LIBRARIES:   ${_cmXLIB_XCB_LIBRARIES}")
 
 if (NOT cmXCB_FOUND AND XCB_FIND_REQUIRED)
     message(FATAL_ERROR "Not found")
