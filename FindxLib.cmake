@@ -68,12 +68,20 @@ if (WIN32)
         dbghelp
         crypt32)
 elseif (UNIX)
-    set(cmXLIB_SYS_LIBRARIES
-        ${cmXLIB_SYS_LIBRARIES}
-        pthread
-        rt
-        m
-        z)
+    if (ENV_APPLE)
+        set(cmXLIB_SYS_LIBRARIES
+            ${cmXLIB_SYS_LIBRARIES}
+            pthread
+            m
+            z)
+    else()
+        set(cmXLIB_SYS_LIBRARIES
+            ${cmXLIB_SYS_LIBRARIES}
+            pthread
+            rt
+            m
+            z)
+    endif()
 else()
     message(ERROR "Get OS env - failed")
 endif()
