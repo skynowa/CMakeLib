@@ -68,7 +68,7 @@ if (WIN32)
         dbghelp
         crypt32)
 elseif (UNIX)
-    if (ENV_APPLE)
+    if (APPLE)
         set(cmXLIB_SYS_LIBRARIES
             ${cmXLIB_SYS_LIBRARIES}
             pthread
