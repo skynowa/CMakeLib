@@ -63,7 +63,6 @@ if (WIN32)
         netapi32
         psapi
         uuid
-        ole32
         mpr
         dbghelp
         crypt32)
