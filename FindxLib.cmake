@@ -101,7 +101,7 @@ elseif (UNIX)
         mysqlclient
         ssh2
         curl
-        xml2
+        xml2)
 else()
     message(ERROR "Get OS env - failed")
 endif()
