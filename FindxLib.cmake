@@ -102,8 +102,6 @@ elseif (UNIX)
         ssh2
         curl
         xml2
-        xcb
-        X11-xcb)
 else()
     message(ERROR "Get OS env - failed")
 endif()
