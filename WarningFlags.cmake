@@ -45,7 +45,7 @@ elseif (CMAKE_COMPILER_IS_GNUCXX)
         include(CMake/WarningFlags_gcc_4.6.4.cmake)
     endif()
 else()
-    message("Unknown compiler")
+    message("WarningFlags: Unknown compiler")
 endif()
 
 if (OS_ANDROID)
