@@ -1,8 +1,14 @@
-# This is basically supposed to be the CMake equivalent of
+#--------------------------------------------------------------------------------------------------
+# \file  ExtraWarningFlags.cmake
+# \brief
+#
+# \faq
 # https://git.gnome.org/browse/gnome-common/tree/macros2/gnome-compiler-flags.m4
+# https://embeddedartistry.com/blog/2017/06/07/warnings-weverything-and-the-kitchen-sink/
+#--------------------------------------------------------------------------------------------------
 
-include(AddCompilerFlags)
 
+#--------------------------------------------------------------------------------------------------
 if (MSVC)
   set (EXTRA_WARNING_FLAGS
     /W3)
@@ -60,9 +66,10 @@ endif()
 mark_as_advanced(EXTRA_WARNING_FLAGS)
 
 function(target_add_extra_warning_flags target)
-    target_add_compiler_flags (${target} ${EXTRA_WARNING_FLAGS})
+    target_add_compiler_flags(${target} ${EXTRA_WARNING_FLAGS})
 endfunction()
 
-function (source_file_add_extra_warning_flags file)
-    source_file_add_compiler_flags (${file} ${EXTRA_WARNING_FLAGS})
+function(source_file_add_extra_warning_flags file)
+    source_file_add_compiler_flags(${file} ${EXTRA_WARNING_FLAGS})
 endfunction()
+#--------------------------------------------------------------------------------------------------
