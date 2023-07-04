@@ -13,6 +13,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project("CMakeLib")
 #--------------------------------------------------------------------------------------------------
 # install
+message(STATUS "CMAKE_ROOT: ${CMAKE_ROOT}")
 
 # dirs
 install(
