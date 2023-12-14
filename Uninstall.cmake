@@ -9,7 +9,7 @@ set(MANIFEST "${CMAKE_CURRENT_BINARY_DIR}/install_manifest.txt")
 message(STATUS "MANIFEST ${MANIFEST}")
 
 if (NOT EXISTS "${MANIFEST}")
-	message(FATAL_ERROR "Uninstall - skipped, can't find install manifest: ${MANIFEST}")
+	message(STATUS "Uninstall - skipped, can't find install manifest: ${MANIFEST}")
 endif()
 
 file(READ "${MANIFEST}" files)
