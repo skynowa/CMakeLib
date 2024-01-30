@@ -15,7 +15,7 @@ set(_QT6_MODULES
     PrintSupport
     Concurrent
     Core5Compat
-    # Multimedia
+    Multimedia
 )
 
 if (OS_ANDROID)
