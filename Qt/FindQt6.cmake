@@ -14,8 +14,9 @@ set(_QT6_MODULES
     Xml
     PrintSupport
     Concurrent
-    Core5Compat
+    Core5Compat # Install - Qt 5 Compatibility Module
     Multimedia
+    MultimediaWidgets
 )
 
 if (OS_ANDROID)
