@@ -16,8 +16,7 @@ set(_QT6_MODULES
     Concurrent
     Core5Compat # Install - Qt 5 Compatibility Module
     Multimedia
-    MultimediaWidgets
-)
+    MultimediaWidgets)
 
 if (OS_ANDROID)
     set(_QT6_MODULES ${_QT6_MODULES} Qml Quick)
