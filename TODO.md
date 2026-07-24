@@ -28,7 +28,7 @@ Next ID: CMLIB-013
 
 ## Consumer configuration
 
-- [ ] CMLIB-005 Replace processor-name heuristics in OS detection with CMake platform variables
+- [+] CMLIB-005 Replace processor-name heuristics in OS detection with CMake platform variables
   that distinguish Windows, Linux, Android, Apple, and BSD during native and cross builds.
   - Module: `FindOS.cmake`.
 - [ ] CMLIB-006 Expose warning settings through an opt-in target or function, keep

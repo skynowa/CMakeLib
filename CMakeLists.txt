@@ -12,6 +12,19 @@ cmake_minimum_required(VERSION 3.15)
 #--------------------------------------------------------------------------------------------------
 project("CMakeLib")
 #--------------------------------------------------------------------------------------------------
+# tests
+include(CTest)
+
+if (BUILD_TESTING)
+    add_test(
+        NAME
+            CMakeLib.FindOS
+        COMMAND
+            ${CMAKE_COMMAND}
+            "-DCMAKE_LIB_SOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/Tests/FindOS.cmake")
+endif()
+#--------------------------------------------------------------------------------------------------
 # install
 message(STATUS "CMAKE_ROOT: ${CMAKE_ROOT}")
 
@@ -28,6 +41,7 @@ install(
         PATTERN "CMakeLists.txt"     EXCLUDE
         PATTERN "FindCMakeLib.cmake" EXCLUDE
         PATTERN "Templates"          EXCLUDE
+        PATTERN "Tests"              EXCLUDE
         PATTERN "install.sh"         EXCLUDE
         PATTERN "uninstall.sh"       EXCLUDE)
 
