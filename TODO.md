@@ -22,7 +22,7 @@ Next ID: CMLIB-013
   - Modules: `FindAddr2Line.cmake`, `FindAtos.cmake`,
     `StaticAnalisis/FindClangTidy.cmake`, `StaticAnalisis/FindCppCheck.cmake`, and
     `StaticAnalisis/FindPvsStudio.cmake`.
-- [ ] CMLIB-004 Make Git revision discovery return an accurate non-fatal result outside a Git
+- [+] CMLIB-004 Make Git revision discovery return an accurate non-fatal result outside a Git
   worktree and support detached HEAD, missing Git, and source archives.
   - Module: `FindGitRevision.cmake`.
 

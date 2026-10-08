@@ -23,6 +23,35 @@ if (BUILD_TESTING)
             ${CMAKE_COMMAND}
             "-DCMAKE_LIB_SOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
             -P "${CMAKE_CURRENT_SOURCE_DIR}/Tests/FindOS.cmake")
+
+    find_package(Git QUIET)
+
+    if (GIT_FOUND)
+        foreach(GIT_REVISION_TEST_MODE worktree detached)
+            add_test(
+                NAME
+                    "CMakeLib.FindGitRevision.${GIT_REVISION_TEST_MODE}"
+                COMMAND
+                    ${CMAKE_COMMAND}
+                    "-DCMAKE_LIB_SOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
+                    "-DCMAKE_LIB_TEST_BINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}/Tests"
+                    "-DCMAKE_LIB_TEST_GIT_EXECUTABLE=${GIT_EXECUTABLE}"
+                    "-DCMAKE_LIB_TEST_MODE=${GIT_REVISION_TEST_MODE}"
+                    -P "${CMAKE_CURRENT_SOURCE_DIR}/Tests/FindGitRevision.cmake")
+        endforeach()
+    endif()
+
+    foreach(GIT_REVISION_TEST_MODE source-archive git-missing)
+        add_test(
+            NAME
+                "CMakeLib.FindGitRevision.${GIT_REVISION_TEST_MODE}"
+            COMMAND
+                ${CMAKE_COMMAND}
+                "-DCMAKE_LIB_SOURCE_DIR=${CMAKE_CURRENT_SOURCE_DIR}"
+                "-DCMAKE_LIB_TEST_BINARY_DIR=${CMAKE_CURRENT_BINARY_DIR}/Tests"
+                "-DCMAKE_LIB_TEST_MODE=${GIT_REVISION_TEST_MODE}"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/Tests/FindGitRevision.cmake")
+    endforeach()
 endif()
 #--------------------------------------------------------------------------------------------------
 # install
